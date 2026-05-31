@@ -11,16 +11,16 @@
 </head>
 <body>
 
-<!-- ── Newspaper header strip ───────────────────────────────────────────── -->
+<!-- ── Newspaper header strip ─────────────────────────────────────────────── -->
 <header class="strip">
   <div class="strip__pub">The Hornet Register</div>
-  <div class="strip__meta">Sacramento State · College of Business · MGT 120 · June 2026</div>
+  <div class="strip__meta">Team 7 &middot; MGT 120 &middot; Spring 2026</div>
   <div class="strip__folio">
     <span id="stripCurrent">01</span>&thinsp;/&thinsp;{{ panels|length }}
   </div>
 </header>
 
-<!-- ── Dot navigation ───────────────────────────────────────────────────── -->
+<!-- ── Dot navigation ─────────────────────────────────────────────────────── -->
 <nav class="dot-nav" id="dotNav" aria-label="Section navigation">
   {% for panel in panels %}
   <button class="dot{% if loop.first %} active{% endif %}"
@@ -29,7 +29,7 @@
   {% endfor %}
 </nav>
 
-<!-- ── Panels ────────────────────────────────────────────────────────────── -->
+<!-- ── Panels ─────────────────────────────────────────────────────────────── -->
 <main id="main">
 
 {% for panel in panels %}
@@ -39,13 +39,14 @@
          data-index="{{ loop.index0 }}"
          style="background:{{ panel.bg if panel.bg is defined and panel.bg else '#021A0F' }};">
 
-{# ══════════════════════════════════════════════════════════════════════
-   MASTHEAD — P0
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── MASTHEAD ──────────────────────────────────────────────────────────────── #}
 {% if panel.type == 'masthead' %}
 <div class="panel-center">
   <div class="mast-wrap">
-    <div class="mast-eyebrow">Team 7</div>
+    <div class="mast-flanks">
+      <span class="mast-flank-l">Special Report</span>
+      <span class="mast-flank-r">June 2026</span>
+    </div>
     <div class="mast-rule"></div>
     <h1 class="mast-name">{{ panel.content.name }}</h1>
     <div class="mast-rule"></div>
@@ -54,27 +55,27 @@
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   ARTICLE HERO — P1 · newspaper front page
-   Left: full-bleed photo placeholder + headline overlaid at bottom-left
-   Right: byline + 4 persona cards (each a mini newspaper article)
-══════════════════════════════════════════════════════════════════════ #}
+{# ── ARTICLE HERO ──────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'article_hero' %}
 <div class="hero-photo">
+  {% if panel.image %}
+  <img src="{{ url_for('static', filename=panel.image) }}" class="real-img" alt="{{ panel.image_label if panel.image_label is defined else '' }}">
+  {% else %}
   <div class="img-ph">
     <div class="img-ph__content">
       <div class="img-ph__plus">+</div>
-      <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else panel.image }}</div>
+      <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else 'No image set' }}</div>
       <div class="img-ph__path">{{ panel.image }}</div>
     </div>
   </div>
+  {% endif %}
   <div class="hero-overlay">
     {% if panel.kicker is defined %}
     <div class="kicker">{{ panel.kicker }}</div>
     {% endif %}
     <h2 class="hero-headline">{{ panel.headline }}</h2>
-    {% if panel.fake_body is defined and panel.fake_body %}
-    <div class="fake-body fake-body--hero">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.</div>
+    {% if panel.body_text is defined %}
+    <p class="article-body article-body--hero">{{ panel.body_text }}</p>
     {% endif %}
   </div>
 </div>
@@ -91,9 +92,7 @@
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   STARK — P2 · one line · rejection letter aesthetic (S02)
-══════════════════════════════════════════════════════════════════════ #}
+{# ── STARK — rejection letter aesthetic ────────────────────────────────────── #}
 {% elif panel.type == 'stark' %}
 <div class="panel-center stark-panel">
   {% if panel.ghost_lines is defined %}
@@ -113,18 +112,20 @@
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   ARTICLE — split: photo left · text right
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── ARTICLE — split: photo left · text right ──────────────────────────────── #}
 {% elif panel.type == 'article' %}
 <div class="split-photo">
+  {% if panel.image %}
+  <img src="{{ url_for('static', filename=panel.image) }}" class="real-img" alt="{{ panel.image_label if panel.image_label is defined else '' }}">
+  {% else %}
   <div class="img-ph">
     <div class="img-ph__content">
       <div class="img-ph__plus">+</div>
-      <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else panel.image }}</div>
+      <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else 'No image set' }}</div>
       <div class="img-ph__path">{{ panel.image }}</div>
     </div>
   </div>
+  {% endif %}
 </div>
 <div class="split-body">
   {% if panel.kicker is defined %}
@@ -141,26 +142,26 @@
   {% if panel.caption is defined %}
   <p class="article-caption">{{ panel.caption }}</p>
   {% endif %}
-  {% if panel.fake_body is defined and panel.fake_body %}
-  <div class="fake-body{% if panel.fake_body_cols is defined and panel.fake_body_cols == 2 %} fake-body--cols{% endif %}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit.</div>
+  {% if panel.body_text is defined %}
+  <p class="article-body">{{ panel.body_text }}</p>
   {% endif %}
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   IMAGE ONLY — full-bleed placeholder
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── IMAGE ONLY — full-bleed placeholder ───────────────────────────────────── #}
 {% elif panel.type == 'image_only' %}
+{% if panel.image %}
+<img src="{{ url_for('static', filename=panel.image) }}" class="real-img" alt="{{ panel.image_label if panel.image_label is defined else '' }}">
+{% else %}
 <div class="img-ph img-ph--full">
   <div class="img-ph__content">
     <div class="img-ph__plus">+</div>
-    <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else panel.image }}</div>
+    <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else 'No image set' }}</div>
     <div class="img-ph__path">{{ panel.image }}</div>
   </div>
 </div>
+{% endif %}
 
-{# ══════════════════════════════════════════════════════════════════════
-   STAT GIANT — P3, P5, P10
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── STAT GIANT ─────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'stat_giant' %}
 <div class="panel-center">
   <div class="stat-wrap">
@@ -171,24 +172,26 @@
     {% if panel.stat_label is defined %}
     <div class="stat-lbl">{{ panel.stat_label }}</div>
     {% endif %}
-    {% if panel.fake_body is defined and panel.fake_body %}
-    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    {% if panel.body_text is defined %}
+    <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   PULL QUOTE — P6 · split: photo left · quote right
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── PULL QUOTE ─────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'pull_quote' %}
 <div class="split-photo">
+  {% if panel.image %}
+  <img src="{{ url_for('static', filename=panel.image) }}" class="real-img" alt="{{ panel.image_label if panel.image_label is defined else '' }}">
+  {% else %}
   <div class="img-ph">
     <div class="img-ph__content">
       <div class="img-ph__plus">+</div>
-      <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else panel.image }}</div>
+      <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else 'No image set' }}</div>
       <div class="img-ph__path">{{ panel.image }}</div>
     </div>
   </div>
+  {% endif %}
 </div>
 <div class="split-body">
   {% if panel.kicker is defined %}
@@ -198,14 +201,12 @@
     <p>{{ panel.quote }}</p>
     <cite>{{ panel.attribution }}</cite>
   </blockquote>
-  {% if panel.fake_body is defined and panel.fake_body %}
-  <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+  {% if panel.body_text is defined %}
+  <p class="article-body">{{ panel.body_text }}</p>
   {% endif %}
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   SPLIT STAT — P7
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── SPLIT STAT ─────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'split_stat' %}
 <div class="panel-center">
   <div class="data-wrap">
@@ -223,15 +224,13 @@
         <div class="two-col__lbl">{{ panel.right_label }}</div>
       </div>
     </div>
-    {% if panel.fake_body is defined and panel.fake_body %}
-    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    {% if panel.body_text is defined %}
+    <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   THREE ASKS — P9
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── THREE ASKS ─────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'three_asks' %}
 <div class="asks-wrap">
   <div class="kicker">{{ panel.kicker }}</div>
@@ -246,11 +245,12 @@
     </div>
     {% endfor %}
   </div>
+  {% if panel.body_text is defined %}
+  <p class="article-body article-body--asks">{{ panel.body_text }}</p>
+  {% endif %}
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   PIPELINE STAT — P11
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── PIPELINE STAT ──────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'pipeline_stat' %}
 <div class="panel-center">
   <div class="data-wrap">
@@ -269,16 +269,13 @@
       </div>
     </div>
     <div class="pipe-bar"><div class="pipe-bar__fill"></div></div>
-    {% if panel.fake_body is defined and panel.fake_body %}
-    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    {% if panel.body_text is defined %}
+    <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   TIMELINE — P12
-   Two-state: Phase 0 hero view → full 4-year view
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── TIMELINE ───────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'timeline' %}
 <div class="tl-wrap">
   <div class="tl-header">
@@ -286,10 +283,9 @@
     <h2 class="headline headline--sm">Four years. Five phases.</h2>
   </div>
 
-  {# State 1: Phase 0 hero — large, readable, focused #}
   <div class="tl-phase0-hero" id="tlPhase0">
     <div class="tl-p0-label">Phase Zero</div>
-    <div class="tl-p0-stat">$0 · Five Decisions</div>
+    <div class="tl-p0-stat">No Cost · Five Decisions</div>
     <div class="tl-p0-period">June – September 2026</div>
     <div class="tl-p0-desc">Five decisions the Provost can make this summer. No budget line. No employer at the table. No approval chain beyond the office.</div>
     <div class="tl-p0-events">
@@ -299,7 +295,6 @@
     </div>
   </div>
 
-  {# State 2: Full 4-year timeline — revealed after spacebar/button #}
   <div class="tl-full-view" id="tlFull">
     <div class="timeline-viewport">
       <div class="timeline-track" id="timelineTrack">
@@ -327,9 +322,7 @@
   <button class="tl-zoom-btn" id="tlZoomBtn">See all four years →</button>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   IMPACT GRID — P13
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── IMPACT GRID ────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'impact_grid' %}
 <div class="panel-center">
   <div class="data-wrap">
@@ -344,15 +337,13 @@
       </div>
       {% endfor %}
     </div>
-    {% if panel.fake_body is defined and panel.fake_body %}
-    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    {% if panel.body_text is defined %}
+    <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   PHASE ZERO — P10 · three-item stacked cascade
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── PHASE ZERO ─────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'phase_zero' %}
 <div class="panel-center">
   <div class="pz-wrap">
@@ -370,15 +361,13 @@
     {% if panel.context is defined %}
     <p class="pz-context">{{ panel.context }}</p>
     {% endif %}
-    {% if panel.fake_body is defined and panel.fake_body %}
-    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</div>
+    {% if panel.body_text is defined %}
+    <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   REFRAME — P13b · S19 · "They're not hiring. That's exactly the point."
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── REFRAME ────────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'reframe' %}
 <div class="panel-center">
   <div class="reframe-wrap">
@@ -390,9 +379,7 @@
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   ACTION GRID — P14b · nuanced who/what/when
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── ACTION GRID ────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'action_grid' %}
 <div class="panel-center">
   <div class="ag-wrap">
@@ -413,9 +400,7 @@
   </div>
 </div>
 
-{# ══════════════════════════════════════════════════════════════════════
-   CLOSE — P15
-═══════════════════════════════════════════════════════════════════════ #}
+{# ── CLOSE ──────────────────────────────────────────────────────────────────── #}
 {% elif panel.type == 'close' %}
 <div class="panel-center">
   <div class="close-wrap">
@@ -423,10 +408,7 @@
     <h2 class="close-head">{{ panel.headline }}</h2>
     <div class="close-rule"></div>
     <p class="close-sub">{{ panel.subtitle }}</p>
-    <p class="close-foot">The Hornet Register · Sacramento State · MGT 120 · June 2026</p>
-    {% if panel.fake_body is defined and panel.fake_body %}
-    <div class="fake-body fake-body--center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</div>
-    {% endif %}
+    <p class="close-foot">{{ panel.footer if panel.footer is defined else 'The Hornet Register · Team 7 · MGT 120 · Spring 2026' }}</p>
   </div>
 </div>
 
