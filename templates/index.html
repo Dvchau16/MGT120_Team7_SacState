@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hornet Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ── Newspaper header strip ───────────────────────────────────────────── -->
+<header class="strip">
+  <div class="strip__pub">The Hornet Register</div>
+  <div class="strip__meta">Sacramento State · College of Business · MGT 120 · June 2026</div>
+  <div class="strip__folio">
+    <span id="stripCurrent">01</span>&thinsp;/&thinsp;{{ panels|length }}
+  </div>
+</header>
+
+<!-- ── Dot navigation ───────────────────────────────────────────────────── -->
+<nav class="dot-nav" id="dotNav" aria-label="Section navigation">
+  {% for panel in panels %}
+  <button class="dot{% if loop.first %} active{% endif %}"
+          data-index="{{ loop.index0 }}"
+          aria-label="Section {{ loop.index }}"></button>
+  {% endfor %}
+</nav>
+
+<!-- ── Panels ────────────────────────────────────────────────────────────── -->
+<main id="main">
+
+{% for panel in panels %}
+<section class="panel{% if loop.first %} active{% endif %}"
+         id="{{ panel.id }}"
+         data-panel-type="{{ panel.type }}"
+         data-index="{{ loop.index0 }}"
+         style="background:{{ panel.bg if panel.bg is defined and panel.bg else '#021A0F' }};">
+
+{# ══════════════════════════════════════════════════════════════════════
+   MASTHEAD — P0
+═══════════════════════════════════════════════════════════════════════ #}
+{% if panel.type == 'masthead' %}
+<div class="panel-center">
+  <div class="mast-wrap">
+    <div class="mast-eyebrow">Team 7</div>
+    <div class="mast-rule"></div>
+    <h1 class="mast-name">{{ panel.content.name }}</h1>
+    <div class="mast-rule"></div>
+    <p class="mast-sub">{{ panel.content.subtitle }}</p>
+    <div class="mast-hint">↓</div>
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   ARTICLE HERO — P1 · newspaper front page
+   Left: full-bleed photo placeholder + headline overlaid at bottom-left
+   Right: byline + 4 persona cards (each a mini newspaper article)
+══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'article_hero' %}
+<div class="hero-photo">
+  <div class="img-ph">
+    <div class="img-ph__content">
+      <div class="img-ph__plus">+</div>
+      <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else panel.image }}</div>
+      <div class="img-ph__path">{{ panel.image }}</div>
+    </div>
+  </div>
+  <div class="hero-overlay">
+    {% if panel.kicker is defined %}
+    <div class="kicker">{{ panel.kicker }}</div>
+    {% endif %}
+    <h2 class="hero-headline">{{ panel.headline }}</h2>
+    {% if panel.fake_body is defined and panel.fake_body %}
+    <div class="fake-body fake-body--hero">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.</div>
+    {% endif %}
+  </div>
+</div>
+<div class="hero-sidebar">
+  <div class="hero-byline">{{ panel.persona.byline }}</div>
+  <div class="hero-cards">
+    {% for card in panel.persona.sidebar %}
+    <div class="hero-card">
+      <div class="hero-card__rule"></div>
+      <div class="hero-card__label">{{ card.label }}</div>
+      <div class="hero-card__desc">{{ card.desc }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   STARK — P2 · one line · rejection letter aesthetic (S02)
+══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'stark' %}
+<div class="panel-center stark-panel">
+  {% if panel.ghost_lines is defined %}
+  <div class="stark-ghost" aria-hidden="true">
+    {% for line in panel.ghost_lines %}
+    <div class="stark-ghost__line">{{ line }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div class="stark-wrap">
+    <div class="stark-rule"></div>
+    <h2 class="stark-head">{{ panel.headline }}</h2>
+    <div class="stark-rule"></div>
+    {% if panel.dateline is defined %}
+    <div class="stark-dateline">{{ panel.dateline }}</div>
+    {% endif %}
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   ARTICLE — split: photo left · text right
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'article' %}
+<div class="split-photo">
+  <div class="img-ph">
+    <div class="img-ph__content">
+      <div class="img-ph__plus">+</div>
+      <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else panel.image }}</div>
+      <div class="img-ph__path">{{ panel.image }}</div>
+    </div>
+  </div>
+</div>
+<div class="split-body">
+  {% if panel.kicker is defined %}
+  <div class="kicker{% if panel.kicker_muted is defined and panel.kicker_muted %} kicker--muted{% endif %}">{{ panel.kicker }}</div>
+  {% endif %}
+  {% if panel.headline is defined %}
+    {% if panel.headline_muted_from is defined %}
+      {% set parts = panel.headline.split(panel.headline_muted_from) %}
+      <h2 class="headline"{% if panel.headline_color is defined %} style="color:{{ panel.headline_color }};"{% endif %}>{{ parts[0] }}<span class="headline-muted">{{ panel.headline_muted_from }}</span></h2>
+    {% else %}
+      <h2 class="headline"{% if panel.headline_color is defined %} style="color:{{ panel.headline_color }};"{% endif %}>{{ panel.headline }}</h2>
+    {% endif %}
+  {% endif %}
+  {% if panel.caption is defined %}
+  <p class="article-caption">{{ panel.caption }}</p>
+  {% endif %}
+  {% if panel.fake_body is defined and panel.fake_body %}
+  <div class="fake-body{% if panel.fake_body_cols is defined and panel.fake_body_cols == 2 %} fake-body--cols{% endif %}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit.</div>
+  {% endif %}
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   IMAGE ONLY — full-bleed placeholder
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'image_only' %}
+<div class="img-ph img-ph--full">
+  <div class="img-ph__content">
+    <div class="img-ph__plus">+</div>
+    <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else panel.image }}</div>
+    <div class="img-ph__path">{{ panel.image }}</div>
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   STAT GIANT — P3, P5, P10
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'stat_giant' %}
+<div class="panel-center">
+  <div class="stat-wrap">
+    {% if panel.kicker is defined %}
+    <div class="kicker">{{ panel.kicker }}</div>
+    {% endif %}
+    <div class="stat-num"{% if panel.stat_size is defined %} style="font-size:{{ panel.stat_size }};{% if panel.stat_color is defined %}color:{{ panel.stat_color }};{% endif %}"{% elif panel.stat_color is defined %} style="color:{{ panel.stat_color }};"{% endif %}>{{ panel.stat }}</div>
+    {% if panel.stat_label is defined %}
+    <div class="stat-lbl">{{ panel.stat_label }}</div>
+    {% endif %}
+    {% if panel.fake_body is defined and panel.fake_body %}
+    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    {% endif %}
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   PULL QUOTE — P6 · split: photo left · quote right
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'pull_quote' %}
+<div class="split-photo">
+  <div class="img-ph">
+    <div class="img-ph__content">
+      <div class="img-ph__plus">+</div>
+      <div class="img-ph__name">{{ panel.image_label if panel.image_label is defined else panel.image }}</div>
+      <div class="img-ph__path">{{ panel.image }}</div>
+    </div>
+  </div>
+</div>
+<div class="split-body">
+  {% if panel.kicker is defined %}
+  <div class="kicker">{{ panel.kicker }}</div>
+  {% endif %}
+  <blockquote class="pull-q">
+    <p>{{ panel.quote }}</p>
+    <cite>{{ panel.attribution }}</cite>
+  </blockquote>
+  {% if panel.fake_body is defined and panel.fake_body %}
+  <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+  {% endif %}
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   SPLIT STAT — P7
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'split_stat' %}
+<div class="panel-center">
+  <div class="data-wrap">
+    {% if panel.kicker is defined %}
+    <div class="kicker">{{ panel.kicker }}</div>
+    {% endif %}
+    <div class="two-col">
+      <div class="two-col__half">
+        <div class="two-col__num" style="color:{{ panel.left_color }};">{{ panel.left_stat }}</div>
+        <div class="two-col__lbl">{{ panel.left_label }}</div>
+      </div>
+      <div class="two-col__rule"></div>
+      <div class="two-col__half">
+        <div class="two-col__num" style="color:{{ panel.right_color }};">{{ panel.right_stat }}</div>
+        <div class="two-col__lbl">{{ panel.right_label }}</div>
+      </div>
+    </div>
+    {% if panel.fake_body is defined and panel.fake_body %}
+    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    {% endif %}
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   THREE ASKS — P9
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'three_asks' %}
+<div class="asks-wrap">
+  <div class="kicker">{{ panel.kicker }}</div>
+  <div class="asks-list">
+    {% for ask in panel.asks %}
+    <div class="ask-row">
+      <div class="ask-num">{{ "0%d"|format(loop.index) }}</div>
+      <div class="ask-body">
+        <div class="ask-word">{{ ask.word }}</div>
+        <div class="ask-note">{{ ask.note }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   PIPELINE STAT — P11
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'pipeline_stat' %}
+<div class="panel-center">
+  <div class="data-wrap">
+    {% if panel.kicker is defined %}
+    <div class="kicker">{{ panel.kicker }}</div>
+    {% endif %}
+    <div class="pipe-nums">
+      <div class="pipe-side">
+        <div class="pipe-num" style="color:{{ panel.left_color }};">{{ panel.left_stat }}</div>
+        <div class="pipe-lbl">{{ panel.left_label }}</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-side">
+        <div class="pipe-num" style="color:{{ panel.right_color }};">{{ panel.right_stat }}</div>
+        <div class="pipe-lbl">{{ panel.right_label }}</div>
+      </div>
+    </div>
+    <div class="pipe-bar"><div class="pipe-bar__fill"></div></div>
+    {% if panel.fake_body is defined and panel.fake_body %}
+    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    {% endif %}
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   TIMELINE — P12
+   Two-state: Phase 0 hero view → full 4-year view
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'timeline' %}
+<div class="tl-wrap">
+  <div class="tl-header">
+    <div class="kicker">Strategic Roadmap · 2026 – 2030</div>
+    <h2 class="headline headline--sm">Four years. Five phases.</h2>
+  </div>
+
+  {# State 1: Phase 0 hero — large, readable, focused #}
+  <div class="tl-phase0-hero" id="tlPhase0">
+    <div class="tl-p0-label">Phase Zero</div>
+    <div class="tl-p0-stat">$0 · Five Decisions</div>
+    <div class="tl-p0-period">June – September 2026</div>
+    <div class="tl-p0-desc">Five decisions the Provost can make this summer. No budget line. No employer at the table. No approval chain beyond the office.</div>
+    <div class="tl-p0-events">
+      <div class="tl-p0-ev"><span style="background:#C4A35A;" class="tl-p0-dot"></span>3 employer agreements signed &rarr; Fall 2026</div>
+      <div class="tl-p0-ev"><span style="background:#5AD88A;" class="tl-p0-dot"></span>Career Fair employer survey deployed &rarr; October 2026</div>
+      <div class="tl-p0-ev"><span style="background:#5AAAE8;" class="tl-p0-dot"></span>Mock interview required in two courses &rarr; Fall 2026</div>
+    </div>
+  </div>
+
+  {# State 2: Full 4-year timeline — revealed after spacebar/button #}
+  <div class="tl-full-view" id="tlFull">
+    <div class="timeline-viewport">
+      <div class="timeline-track" id="timelineTrack">
+        <div class="tl-years">
+          <span style="left:0%">2026</span>
+          <span style="left:25%">2027</span>
+          <span style="left:50%">2028</span>
+          <span style="left:75%">2029</span>
+          <span style="left:100%">2030</span>
+        </div>
+        <div class="tl-rule"></div>
+        <div class="tl-events" id="tlEvents"></div>
+        <div class="tl-phases" id="tlPhases"></div>
+      </div>
+    </div>
+    <div class="tl-legend">
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#C4A35A;"></span>Employer Agreements</div>
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#5AAAE8;"></span>Advisory Council</div>
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#5AD88A;"></span>Career Fair Survey</div>
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#E87A5A;"></span>Feb 6 Deadline</div>
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#C875E8;"></span>EF Roundtable</div>
+    </div>
+  </div>
+
+  <button class="tl-zoom-btn" id="tlZoomBtn">See all four years →</button>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   IMPACT GRID — P13
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'impact_grid' %}
+<div class="panel-center">
+  <div class="data-wrap">
+    {% if panel.kicker is defined %}
+    <div class="kicker">{{ panel.kicker }}</div>
+    {% endif %}
+    <div class="impact-grid">
+      {% for stat in panel.stats %}
+      <div class="impact-cell">
+        <div class="impact-num">{{ stat.number }}</div>
+        <div class="impact-lbl">{{ stat.label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if panel.fake_body is defined and panel.fake_body %}
+    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    {% endif %}
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   PHASE ZERO — P10 · three-item stacked cascade
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'phase_zero' %}
+<div class="panel-center">
+  <div class="pz-wrap">
+    {% if panel.kicker is defined %}
+    <div class="kicker">{{ panel.kicker }}</div>
+    {% endif %}
+    <div class="pz-items">
+      {% for item in panel.cascade %}
+      <div class="pz-item pz-item--{{ loop.index }}">
+        <span class="pz-value">{{ item.value }}</span>
+        <span class="pz-label">{{ item.label }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    {% if panel.context is defined %}
+    <p class="pz-context">{{ panel.context }}</p>
+    {% endif %}
+    {% if panel.fake_body is defined and panel.fake_body %}
+    <div class="fake-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</div>
+    {% endif %}
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   REFRAME — P13b · S19 · "They're not hiring. That's exactly the point."
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'reframe' %}
+<div class="panel-center">
+  <div class="reframe-wrap">
+    <div class="reframe-line1">{{ panel.line1 }}</div>
+    <div class="reframe-line2">{{ panel.line2 }}</div>
+    {% if panel.context is defined %}
+    <p class="reframe-context">{{ panel.context }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   ACTION GRID — P14b · nuanced who/what/when
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'action_grid' %}
+<div class="panel-center">
+  <div class="ag-wrap">
+    {% if panel.kicker is defined %}
+    <div class="kicker">{{ panel.kicker }}</div>
+    {% endif %}
+    <div class="ag-rows">
+      {% for actor in panel.actors %}
+      <div class="ag-row">
+        <div class="ag-meta">
+          <div class="ag-who">{{ actor.who }}</div>
+          <div class="ag-when">{{ actor.when }}</div>
+        </div>
+        <div class="ag-what">{{ actor.what }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   CLOSE — P15
+═══════════════════════════════════════════════════════════════════════ #}
+{% elif panel.type == 'close' %}
+<div class="panel-center">
+  <div class="close-wrap">
+    <div class="close-rule"></div>
+    <h2 class="close-head">{{ panel.headline }}</h2>
+    <div class="close-rule"></div>
+    <p class="close-sub">{{ panel.subtitle }}</p>
+    <p class="close-foot">The Hornet Register · Sacramento State · MGT 120 · June 2026</p>
+    {% if panel.fake_body is defined and panel.fake_body %}
+    <div class="fake-body fake-body--center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</div>
+    {% endif %}
+  </div>
+</div>
+
+{% endif %}
+
+</section>
+{% endfor %}
+
+</main>
+
+<script>
+  window.TIMELINE_EVENTS = {{ timeline_events_json | safe }};
+  window.PHASES          = {{ phases_json | safe }};
+</script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
