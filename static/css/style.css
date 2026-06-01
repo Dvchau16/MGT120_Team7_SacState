@@ -1521,3 +1521,10 @@ html, body {
   position: absolute;
   inset: 0;
 }
+/* Zoom these out: show the whole image instead of cropping to fill.
+   empty_chair (p4) */
+#p4 .real-img,
+#p6 .real-img {
+  object-fit: contain;
+  object-position: center;
+}
