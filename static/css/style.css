@@ -549,7 +549,7 @@ html, body {
   font-size: clamp(13px, 1vw, 15px);
   text-transform: uppercase;
   letter-spacing: 0.10em;
-  color: var(--cream-muted);
+  color: var(--cream);
   line-height: 1.75;
   max-width: 280px;
 }
@@ -887,7 +887,7 @@ html, body {
   font-size: clamp(12px, 0.92vw, 14px);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--cream-muted);
+  color: var(--cream);
   line-height: 1.65;
 }
 
@@ -1064,7 +1064,7 @@ html, body {
 .hero-card__desc {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(17px, 1.1vw, 20px);
+  font-size: clamp(24px, 1.1vw, 28px);
   color: var(--cream-muted);
   line-height: 1.55;
 }
@@ -1489,12 +1489,12 @@ html, body {
   inset: 0;
 }
 /* Zoom these out: show the whole image instead of cropping to fill.
-   empty_chair (p4) */
+   empty_chair (p4) 
 #p4 .real-img,
 #p6 .real-img {
   object-fit: contain;
   object-position: center;
-}
+}*/
 
 /* ══════════════════════════════════════════════════════════════════════════
    RESPONSIVE SCALING
