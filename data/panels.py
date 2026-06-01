@@ -170,7 +170,7 @@ PANELS = [
         "type": "article",
         "bg": "#021A0F",
 
-        "image": "images/geologyAI.png",
+        "image": "images/geology.jpg",
         "image_label": "Geology Dept. · Top 10 in CA for professional licensure",
         "kicker": "The Exception",
         "headline": "One department. One person. Doesn't scale.",
