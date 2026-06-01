@@ -109,8 +109,8 @@ PANELS = [
         "image": None,
         "stat": "Unused.",
         "stat_size": "clamp(52px, 9vw, 120px)",
-        "stat_label": "Big Interview is Sacramento State's licensed mock interview platform — free to every enrolled student. Every student surveyed had never opened it. No major requires it.",
-        "body_text": "Students found opportunities through a professor or a personal contact — not through Handshake, not the Career Center. The tool exists. The mandate does not.",
+        "stat_label": "Big Interview is Sacramento State's licensed mock interview platform, free to every enrolled student. Every student surveyed had never opened it. No major requires it.",
+        "body_text": "Students found opportunities through a professor or a personal contact, not through Handshake, not the Career Center. The tool exists. The mandate does not.",
     },
     {
         "id": "p4",
@@ -118,12 +118,12 @@ PANELS = [
         "bg": "#021A0F",
 
         "image": "images/table_empty_chair.png",
-        "image_label": "Empty chair at a faculty curriculum table — surrounded by filled chairs",
+        "image_label": "Empty chair at a faculty curriculum table - surrounded by filled chairs",
         "kicker": "Curriculum Design",
         "headline": "Employers are not in this room.",
         "headline_muted_from": "this room.",
         "caption": "Every course at Sacramento State is built against internally-defined learning outcomes. Employers are absent from every stage of writing them.",
-        "body_text": "A faculty member told us she doesn't consider employer feedback when building courses — not from indifference, but because the institution never built a door for that signal to walk through.",
+        "body_text": "A faculty member told us she doesn't consider employer feedback when building courses, not from indifference, but because the institution never built a door for that signal to walk through.",
     },
     {
         "id": "p5",
@@ -145,7 +145,7 @@ PANELS = [
         "image": "images/brodd_AI.png",
         "image_label": "(Former) Dept. Chair · Sacramento State",
         "kicker": "Faculty Incentives",
-        "quote": "My tenure was based on research publications and service to the school — not because my students got jobs.",
+        "quote": "My tenure was based on research publications and service to the school, not because my students got jobs.",
         "attribution": "(Former) Department Chair · Sacramento State",
         "body_text": "The system evaluates faculty on research output and satisfaction scores. Course redesign earns no tenure credit, no protected time, no compensation. The rational move is to leave the existing course alone.",
     },
@@ -163,7 +163,7 @@ PANELS = [
         "right_stat":  "52%",
         "right_label": "Class of 2023 underemployed within 12 months of graduation (NSSE 2023)",
         "right_color": "#C4A35A",
-        "body_text": "In a soft market, the candidates who get the few available jobs have applied experience and warm introductions — exactly what this pipeline produces.",
+        "body_text": "In a soft market, the candidates who get the few available jobs have applied experience and warm introductions, exactly what this pipeline produces.",
     },
     {
         "id": "p8",
@@ -175,7 +175,7 @@ PANELS = [
         "kicker": "The Exception",
         "headline": "One department. One person. Doesn't scale.",
         "headline_muted_from": "Doesn't scale.",
-        "body_text": "Top 10 in California for professional geologist licensure pass rates. Students at the USGS, CalTrans, state water agencies. The system works — because one department chair knows every hiring manager by name. That's not a system. That's a single point of failure.",
+        "body_text": "Top 10 in California for professional geologist licensure pass rates. Students at the USGS, CalTrans, state water agencies. The system works, because one department chair knows every hiring manager by name. That's not a system. That's a single point of failure.",
     },
     {
         "id": "p9",
@@ -191,11 +191,11 @@ PANELS = [
             },
             {
                 "word": "A Signal.",
-                "note": "Employer expectations reaching the curriculum before February 6 — every year, on a schedule."
+                "note": "Employer expectations reaching the curriculum before February 6, every year, on a schedule."
             },
             {
                 "word": "An Infrastructure.",
-                "note": "A system that works for the student who cannot afford to say no to an offer. Internship Access Fund — $150K annually, $1,500–$2,500 stipends for financial-aid-eligible students."
+                "note": "A system that works for the student who cannot afford to say no to an offer. Internship Access Fund: $150K annually, $1,500–$2,500 stipends for financial-aid-eligible students."
             },
         ],
         "body_text": "This is not a wishlist. Every item below is achievable with existing authority, existing tools, and existing staff.",
@@ -273,7 +273,7 @@ PANELS = [
         "kicker_muted": True,
         "headline": "He got the job.",
         "headline_color": "#E8D5A3",
-        "body_text": "He didn't apply cold. He walked in warm — introduced, prepared, credentialed. His parents get their return on $113,696. The degree meant something because the institution made it mean something.",
+        "body_text": "He didn't apply cold. He walked in warm: introduced, prepared, credentialed. His parents get their return on $113,696. The degree meant something because the institution made it mean something.",
     },
     {
         "id": "p14b",
@@ -286,22 +286,22 @@ PANELS = [
             {
                 "who": "The Provost",
                 "when": "June 2026",
-                "what": "Five policy changes — cap approval timelines, add employer-alignment question to tenure file, create a competency fast-track, configure intake form, update one workflow. No budget. No Senate vote.",
+                "what": "Five policy changes: cap approval timelines, add employer-alignment question to tenure file, create a competency fast-track, configure intake form, update one workflow. No budget. No Senate vote.",
             },
             {
                 "who": "University Enterprises",
                 "when": "Now",
-                "what": "Employer outreach begins immediately. Three signed agreements by December. Each employer commits to two slots and one annual survey. Target: regional tech, health systems, state agencies. Internship Access Fund launched simultaneously — stipends ensure financial aid is not a barrier to accepting a slot.",
+                "what": "Employer outreach begins immediately. Three signed agreements by December. Each employer commits to two slots and one annual survey. Target: regional tech, health systems, state agencies. Internship Access Fund launched simultaneously, stipends ensure financial aid is not a barrier to accepting a slot.",
             },
             {
                 "who": "Career Center",
                 "when": "Fall 2026",
-                "what": "Employer-in-Residence replaces one career fair event. One employer, one department, ten pre-scheduled student meetings through Handshake. The scheduling already works — this is a configuration.",
+                "what": "Employer-in-Residence replaces one career fair event. One employer, one department, ten pre-scheduled student meetings through Handshake. The scheduling already works. This is a configuration.",
             },
             {
                 "who": "Faculty",
                 "when": "Year 2",
-                "what": "Capstone course designation. Students produce a portfolio artifact assessed by practitioners drawn from the employer council — not faculty alone.",
+                "what": "Capstone course designation. Students produce a portfolio artifact assessed by practitioners drawn from the employer council, not faculty alone.",
             },
         ],
     },
