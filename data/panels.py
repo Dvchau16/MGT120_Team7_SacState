@@ -17,7 +17,7 @@ def pct(d):
     return round(((d - T_START).days / SPAN) * 100, 2)
 
 PHASES = [
-    {"label": "Phase 0", "stat": "No Cost · 5 decisions",  "start": 0,  "end": 5,  "color": "rgba(4,57,39,0.75)"},
+    {"label": "Phase 0", "stat": "No Cost.",  "start": 0,  "end": 5,  "color": "rgba(4,57,39,0.75)"},
     {"label": "Phase 1", "stat": "3 agreements",       "start": 5,  "end": 12, "color": "rgba(4,57,39,0.55)"},
     {"label": "Phase 2", "stat": "12 agreements",      "start": 12, "end": 25, "color": "rgba(10,92,58,0.55)"},
     {"label": "Phase 3", "stat": "25 agreements",      "start": 25, "end": 50, "color": "rgba(10,92,58,0.40)"},
@@ -48,6 +48,7 @@ PANELS = [
         "id": "p0",
         "type": "masthead",
         "bg": "#010C05",
+
         "image": "images/SSlogo.jpg",
         "content": {
             "name": "The Hornet Register",
@@ -58,12 +59,12 @@ PANELS = [
         "id": "p1",
         "type": "article_hero",
         "bg": "#021A0F",
+
         "image": "images/ryan.jpg",
         "image_label": "Student silhouette · laptop at night · campus",
         "kicker": "The Student",
         "headline": "He did everything right.",
         "persona": {
-            "byline": "Business Administration · Sacramento State's Largest Major · Class of 2026",
             "sidebar": [
                 {
                     "label": "First-Generation Student",
@@ -79,52 +80,56 @@ PANELS = [
                 },
             ]
         },
-        "body_text": "Business Administration, Class of 2026. He showed up. Passed his classes. Did everything the institution asked of him.",
+        "body_text": "Business Administration, Class of 2026. He showed up. Passed every class. Did everything the institution asked.",
     },
     {
         "id": "p2",
         "type": "stark",
         "bg": "#010C05",
+
         "image": None,
         "headline": "The degree was supposed to be enough.",
         "dateline": "Sacramento State Career Fair · Spring 2026 · Filed for record",
         "ghost_lines": [
             "Dear Applicant,",
             "We have reviewed your application and appreciate your interest.",
-            "After careful consideration, we have decided to move forward",
-            "with other candidates whose experience more closely aligns",
-            "with the requirements of the role.",
+            "After careful consideration, we have decided to move forward with other candidates whose experience more",
+            "closely aligns with the requirements of the role.",
             "We wish you the best in your continued search.",
             "",
             "— Recruiting Team",
+            " ",
         ],
     },
     {
         "id": "p3",
         "type": "stat_giant",
         "bg": "#010C05",
+
         "image": None,
         "stat": "Unused.",
         "stat_size": "clamp(52px, 9vw, 120px)",
         "stat_label": "Big Interview is Sacramento State's licensed mock interview platform — free to every enrolled student. Every student surveyed had never opened it. No major requires it.",
-        "body_text": "Students most often found opportunities through a professor or personal contact — not through Handshake, not the Career Center. The tool exists. The mandate does not.",
+        "body_text": "Students found opportunities through a professor or a personal contact — not through Handshake, not the Career Center. The tool exists. The mandate does not.",
     },
     {
         "id": "p4",
         "type": "article",
         "bg": "#021A0F",
-        "image": "images/empty_chair.png",
+
+        "image": "images/table_empty_chair.png",
         "image_label": "Empty chair at a faculty curriculum table — surrounded by filled chairs",
         "kicker": "Curriculum Design",
         "headline": "Employers are not in this room.",
         "headline_muted_from": "this room.",
         "caption": "Every course at Sacramento State is built against internally-defined learning outcomes. Employers are absent from every stage of writing them.",
-        "body_text": "A faculty member told us she does not consider employer feedback when designing courses — not because she doesn't care, but because the institution never built a channel for that signal to reach her.",
+        "body_text": "A faculty member told us she doesn't consider employer feedback when building courses — not from indifference, but because the institution never built a door for that signal to walk through.",
     },
     {
         "id": "p5",
         "type": "stat_giant",
         "bg": "#010C05",
+
         "image": None,
         "stat": "2028",
         "stat_color": "#F5F0E6",
@@ -136,17 +141,19 @@ PANELS = [
         "id": "p6",
         "type": "pull_quote",
         "bg": "#021A0F",
-        "image": "images/Brodd.png",
+
+        "image": "images/brodd_AI.png",
         "image_label": "(Former) Dept. Chair · Sacramento State",
         "kicker": "Faculty Incentives",
         "quote": "My tenure was based on research publications and service to the school — not because my students got jobs.",
         "attribution": "(Former) Department Chair · Sacramento State",
-        "body_text": "The system evaluates faculty on research output and student satisfaction scores. Course redesign earns no tenure credit, no protected time, no compensation. The rational response is to maintain the existing course.",
+        "body_text": "The system evaluates faculty on research output and satisfaction scores. Course redesign earns no tenure credit, no protected time, no compensation. The rational move is to leave the existing course alone.",
     },
     {
         "id": "p7",
         "type": "split_stat",
         "bg": "#010C05",
+
         "image": None,
         "kicker": "Hiring Manager · Primary Interview · On Record",
         "left_stat":  "9 in 10",
@@ -162,19 +169,21 @@ PANELS = [
         "id": "p8",
         "type": "article",
         "bg": "#021A0F",
+
         "image": "images/geology.jpg",
         "image_label": "Geology Dept. · Top 10 in CA for professional licensure",
         "kicker": "The Exception",
         "headline": "One department. One person. Doesn't scale.",
         "headline_muted_from": "Doesn't scale.",
-        "body_text": "Top 10 in California for professional geologist licensure pass rates. Students placed at USGS, CalTrans, state water agencies. The department head routes students personally through professional contacts.",
+        "body_text": "Top 10 in California for professional geologist licensure pass rates. Students at the USGS, CalTrans, state water agencies. The system works — because one department chair knows every hiring manager by name. That's not a system. That's a single point of failure.",
     },
     {
         "id": "p9",
         "type": "three_asks",
         "bg": "#043927",
+
         "image": None,
-        "kicker": "The Proposal",
+        "kicker": "The Turning Point · Three Structural Changes",
         "asks": [
             {
                 "word": "A Pipeline.",
@@ -189,12 +198,13 @@ PANELS = [
                 "note": "A system that works for the student who cannot afford to say no to an offer."
             },
         ],
-        "body_text": "Three structural changes. Each addresses a distinct failure point in the institution's career preparation system.",
+        "body_text": "This is not a wishlist. Every item below is achievable with existing authority, existing tools, and existing staff.",
     },
     {
         "id": "p10",
         "type": "phase_zero",
         "bg": "#021A0F",
+
         "image": None,
         "kicker": "Where It Starts · June 2026",
         "cascade": [
@@ -209,6 +219,7 @@ PANELS = [
         "id": "p11",
         "type": "pipeline_stat",
         "bg": "#010C05",
+
         "image": None,
         "kicker": "The Employer Pipeline",
         "left_stat":  "3%",
@@ -223,12 +234,14 @@ PANELS = [
         "id": "p12",
         "type": "timeline",
         "bg": "#021A0F",
+
         "image": None,
     },
     {
         "id": "p13",
         "type": "impact_grid",
         "bg": "#010C05",
+
         "image": None,
         "kicker": "Year 3 · Full Scale",
         "stats": [
@@ -243,27 +256,30 @@ PANELS = [
         "id": "p13b",
         "type": "reframe",
         "bg": "#010C05",
+
         "image": None,
         "line1": "They're not hiring.",
         "line2": "That's exactly the point.",
-        "context": "In a soft market, the candidates who get the few available jobs are the ones with applied experience and a warm introduction. The institution that builds this now is not scrambling when hiring rebounds. Sacramento State needs to already be at the table.",
+        "context": "In a soft market, the candidates who get the few available jobs are the ones with applied experience and a warm introduction. The institution that builds this now isn't scrambling when hiring rebounds. Sacramento State needs to already be at the table.",
     },
     {
         "id": "p14",
         "type": "article",
         "bg": "#043927",
-        "image": "images/resolution.jpg",
+
+        "image": "images/student_recruiter.jpg",
         "image_label": "Ryan · Offer letter · Year 3",
         "kicker": "Year 3 · Resolution",
         "kicker_muted": True,
         "headline": "He got the job.",
         "headline_color": "#E8D5A3",
-        "body_text": "Warm introduction before he applied cold. Mock interview feedback before he sat in a real room. A portfolio artifact to show. His parents get a return on $142,935.",
+        "body_text": "He didn't apply cold. He walked in warm — introduced, prepared, credentialed. His parents get their return on $142,935. The degree meant something because the institution made it mean something.",
     },
     {
         "id": "p14b",
         "type": "action_grid",
         "bg": "#021A0F",
+
         "image": None,
         "kicker": "Who Moves First · Authority Already Exists",
         "actors": [
@@ -293,9 +309,10 @@ PANELS = [
         "id": "p15",
         "type": "close",
         "bg": "#010C05",
+
         "image": None,
         "headline": "The degree has to mean something.",
-        "subtitle": "31,000 students · Questions.",
+        "subtitle": "31,000 students. They did everything right. Now it's the institution's turn.",
         "footer": "The Hornet Register · Team 7 · MGT 120 · Spring 2026",
     },
 ]
