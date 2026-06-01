@@ -72,7 +72,7 @@ PANELS = [
                     "desc": "No alumni network. No internship playbook. No roadmap.",
                 },
                 {
-                    "label": "$142,935",
+                    "label": "$113,696",
                     "desc": "The cost of four years for his family. Paid in full.",
                 },
                 {
@@ -273,7 +273,7 @@ PANELS = [
         "kicker_muted": True,
         "headline": "He got the job.",
         "headline_color": "#E8D5A3",
-        "body_text": "He didn't apply cold. He walked in warm — introduced, prepared, credentialed. His parents get their return on $142,935. The degree meant something because the institution made it mean something.",
+        "body_text": "He didn't apply cold. He walked in warm — introduced, prepared, credentialed. His parents get their return on $113,696. The degree meant something because the institution made it mean something.",
     },
     {
         "id": "p14b",
