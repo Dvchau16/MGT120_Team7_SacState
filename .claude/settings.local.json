@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"from data.panels import PANELS; print\\('OK -', len\\(PANELS\\), 'panels'\\); any_act = [p for p in PANELS if 'act' in p]; print\\('act fields remaining:', len\\(any_act\\)\\)\")"
+    ]
+  }
+}

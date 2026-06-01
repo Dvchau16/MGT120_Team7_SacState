@@ -37,6 +37,7 @@
          id="{{ panel.id }}"
          data-panel-type="{{ panel.type }}"
          data-index="{{ loop.index0 }}"
+         data-act="{{ panel.act if panel.act is defined else '' }}"
          style="background:{{ panel.bg if panel.bg is defined and panel.bg else '#021A0F' }};">
 
 {# ── MASTHEAD ──────────────────────────────────────────────────────────────── #}

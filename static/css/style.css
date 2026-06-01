@@ -138,6 +138,7 @@ html, body {
 .panel[data-panel-type="pull_quote"] {
   display: grid;
   grid-template-columns: 52% 48%;
+  grid-template-rows: 100%;
   align-items: stretch;
 }
 
@@ -146,8 +147,13 @@ html, body {
   display: block;
 }
 
-/* Three asks / timeline: top-aligned content */
-.panel[data-panel-type="three_asks"],
+/* Three asks: centered */
+.panel[data-panel-type="three_asks"] {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Timeline: top-aligned content */
 .panel[data-panel-type="timeline"] {
   align-items: flex-start;
   justify-content: flex-start;
@@ -606,12 +612,13 @@ html, body {
    ══════════════════════════════════════════════════════════════════════════ */
 .asks-wrap {
   width: 100%;
-  height: 100%;
-  padding: calc(var(--strip-h) + clamp(28px, 5vh, 56px))
+  max-width: 960px;
+  padding: calc(var(--strip-h) + clamp(20px, 4vh, 44px))
            clamp(32px, 5.5vw, 80px)
-           clamp(28px, 5vh, 56px);
+           clamp(20px, 4vh, 44px);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -636,12 +643,13 @@ html, body {
 
 .ask-num {
   font-family: var(--mono);
-  font-size: clamp(12px, 0.9vw, 14px);
+  font-size: clamp(48px, 3.6vw, 56px);
+  font-weight: 700;
   color: var(--sac-gold);
   letter-spacing: 0.2em;
   flex-shrink: 0;
-  padding-top: 8px;
-  min-width: 30px;
+  padding-top: 4px;
+  min-width: 90px;
 }
 
 .ask-word {
@@ -975,6 +983,7 @@ html, body {
 .panel[data-panel-type="article_hero"] {
   display: grid;
   grid-template-columns: 58% 42%;
+  grid-template-rows: 100%;
   align-items: stretch;
 }
 
@@ -1064,12 +1073,13 @@ html, body {
   border-bottom: 1px solid rgba(196,163,90,0.20);
 }
 
-/* Card group fills remaining sidebar height */
+/* Card group stacks from top — gap scales purely with screen height */
 .hero-cards {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 5vh;
 }
 
 /* Individual article teaser card */
@@ -1082,11 +1092,13 @@ html, body {
   margin-bottom: clamp(7px, 1.2vh, 11px);
 }
 
+.hero-card:first-child .hero-card__rule { display: none; }
+
 /* The card label acts as a newspaper article headline */
 .hero-card__label {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(13px, 1.3vw, 20px);
+  font-size: clamp(20px, 1.95vw, 30px);
   line-height: 1.18;
   letter-spacing: -0.01em;
   color: var(--cream);
@@ -1096,7 +1108,7 @@ html, body {
 /* Card desc acts as the article deck/lede */
 .hero-card__desc {
   font-family: var(--mono);
-  font-size: clamp(11px, 0.9vw, 13px);
+  font-size: clamp(17px, 1.35vw, 20px);
   color: var(--cream-muted);
   letter-spacing: 0.04em;
   line-height: 1.68;
@@ -1117,7 +1129,7 @@ html, body {
 
 .stark-ghost {
   position: absolute;
-  top: 12%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   width: min(520px, 72vw);
@@ -1138,7 +1150,7 @@ html, body {
 /* The central stark statement */
 .stark-wrap {
   text-align: center;
-  max-width: min(700px, 80vw);
+  max-width: min(1000px, 90vw);
   position: relative;
   z-index: 2;
   opacity: 0;
@@ -1160,7 +1172,7 @@ html, body {
   font-family: var(--serif);
   font-weight: 700;
   font-style: italic;
-  font-size: clamp(22px, 3.6vw, 50px);
+  font-size: clamp(36px, 6.5vw, 96px);
   line-height: 1.18;
   letter-spacing: -0.02em;
   color: var(--cream);
@@ -1512,7 +1524,7 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
 }
 
