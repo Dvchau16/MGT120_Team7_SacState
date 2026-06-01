@@ -72,7 +72,7 @@ PANELS = [
                     "desc": "No alumni network. No internship playbook. No roadmap.",
                 },
                 {
-                    "label": "$142,935",
+                    "label": "$113,696",
                     "desc": "The cost of four years for his family. Paid in full.",
                 },
                 {
