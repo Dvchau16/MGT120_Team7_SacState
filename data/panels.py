@@ -65,22 +65,22 @@ PANELS = [
         "kicker": "The Student",
         "headline": "He did everything right.",
         "persona": {
+            "byline": "Business Administration · Sacramento State's Largest Major · Class of 2026",
             "sidebar": [
                 {
                     "label": "First-Generation Student",
-                    "desc": "No alumni network. No internship playbook. No roadmap. The institution was the only guide.",
+                    "desc": "No alumni network. No internship playbook. No roadmap.",
                 },
                 {
                     "label": "$142,935",
-                    "desc": "The cost of four years for his family — tuition, fees, living expenses. Paid in full.",
+                    "desc": "The cost of four years for his family. Paid in full.",
                 },
                 {
                     "label": "4 Years. No Offer.",
-                    "desc": "Passed every class the institution required. Did everything they asked. Still no placement.",
+                    "desc": "Did everything the institution asked. Still no placement.",
                 },
             ]
         },
-        "body_text": "Business Administration, Class of 2026. He showed up. Passed every class. Did everything the institution asked.",
     },
     {
         "id": "p2",
@@ -195,7 +195,7 @@ PANELS = [
             },
             {
                 "word": "An Infrastructure.",
-                "note": "A system that works for the student who cannot afford to say no to an offer."
+                "note": "A system that works for the student who cannot afford to say no to an offer. Internship Access Fund — $150K annually, $1,500–$2,500 stipends for financial-aid-eligible students."
             },
         ],
         "body_text": "This is not a wishlist. Every item below is achievable with existing authority, existing tools, and existing staff.",
@@ -248,7 +248,7 @@ PANELS = [
             {"number": "31,000", "label": "students in the system"},
             {"number": "100%",   "label": "of majors with a graded mock interview requirement"},
             {"number": "100",    "label": "guaranteed internship slots per semester"},
-            {"number": "2029",   "label": "first placement data in the Factbook"},
+            {"number": "2029",   "label": "first year internship placement rates by major in Factbook"},
         ],
         "body_text": "Every student passing through a required junior-year course is in the system. The Factbook shows internship placement rates alongside graduation rates for the first time.",
     },
@@ -291,7 +291,7 @@ PANELS = [
             {
                 "who": "University Enterprises",
                 "when": "Now",
-                "what": "Employer outreach begins immediately. Three signed agreements by December. Each employer commits to two slots and one annual survey. Target: regional tech, health systems, state agencies.",
+                "what": "Employer outreach begins immediately. Three signed agreements by December. Each employer commits to two slots and one annual survey. Target: regional tech, health systems, state agencies. Internship Access Fund launched simultaneously — stipends ensure financial aid is not a barrier to accepting a slot.",
             },
             {
                 "who": "Career Center",

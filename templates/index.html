@@ -75,7 +75,7 @@
     <div class="kicker">{{ panel.kicker }}</div>
     {% endif %}
     <h2 class="hero-headline">{{ panel.headline }}</h2>
-    {% if panel.body_text is defined %}
+    {% if panel.body_text %}
     <p class="article-body article-body--hero">{{ panel.body_text }}</p>
     {% endif %}
   </div>
@@ -143,7 +143,7 @@
   {% if panel.caption is defined %}
   <p class="article-caption">{{ panel.caption }}</p>
   {% endif %}
-  {% if panel.body_text is defined %}
+  {% if panel.body_text %}
   <p class="article-body">{{ panel.body_text }}</p>
   {% endif %}
 </div>
@@ -173,7 +173,7 @@
     {% if panel.stat_label is defined %}
     <div class="stat-lbl">{{ panel.stat_label }}</div>
     {% endif %}
-    {% if panel.body_text is defined %}
+    {% if panel.body_text %}
     <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
@@ -202,7 +202,7 @@
     <p>{{ panel.quote }}</p>
     <cite>{{ panel.attribution }}</cite>
   </blockquote>
-  {% if panel.body_text is defined %}
+  {% if panel.body_text %}
   <p class="article-body">{{ panel.body_text }}</p>
   {% endif %}
 </div>
@@ -225,7 +225,7 @@
         <div class="two-col__lbl">{{ panel.right_label }}</div>
       </div>
     </div>
-    {% if panel.body_text is defined %}
+    {% if panel.body_text %}
     <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
@@ -246,7 +246,7 @@
     </div>
     {% endfor %}
   </div>
-  {% if panel.body_text is defined %}
+  {% if panel.body_text %}
   <p class="article-body article-body--asks">{{ panel.body_text }}</p>
   {% endif %}
 </div>
@@ -270,7 +270,7 @@
       </div>
     </div>
     <div class="pipe-bar"><div class="pipe-bar__fill"></div></div>
-    {% if panel.body_text is defined %}
+    {% if panel.body_text %}
     <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
@@ -338,7 +338,7 @@
       </div>
       {% endfor %}
     </div>
-    {% if panel.body_text is defined %}
+    {% if panel.body_text %}
     <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
@@ -362,7 +362,7 @@
     {% if panel.context is defined %}
     <p class="pz-context">{{ panel.context }}</p>
     {% endif %}
-    {% if panel.body_text is defined %}
+    {% if panel.body_text %}
     <p class="article-body">{{ panel.body_text }}</p>
     {% endif %}
   </div>
