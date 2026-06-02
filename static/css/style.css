@@ -696,7 +696,7 @@ ul.article-body {
   color: var(--cream-muted);
   letter-spacing: 0.04em;
   line-height: 1.75;
-  max-width: 560px;
+  max-width: fit-content;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1064,7 +1064,7 @@ ul.article-body {
   line-height: 1.03;
   letter-spacing: -0.025em;
   color: var(--cream);
-  margin-bottom: 0;
+  margin: 0;
 }
 
 /* Fake body inside overlay — acts as byline/deck texture */
@@ -1252,6 +1252,11 @@ ul.pz-context {
   list-style: disc;
   padding-left: 1.4em;
 }
+
+ul.pz-context li + li {
+  margin-top: 0.5em;
+}
+
 #p10 .ul.pz-context {
   padding-left: none;
 }
@@ -1287,19 +1292,19 @@ ul.pz-context {
 
 /* Cascade: item 1 largest → item 3 smallest */
 .pz-item--1 .pz-value { font-size: clamp(72px, 13vw, 164px); }
-.pz-item--1 .pz-label { font-size: clamp(24px, 0.9vw, 32px); }
+.pz-item--1 .pz-label { font-size: clamp(26px, 1vw, 35px); }
 
 .pz-item--2 .pz-value {
   font-size: clamp(44px, 8vw, 100px);
   color: var(--cream);
 }
-.pz-item--2 .pz-label { font-size: clamp(20px, 0.8vw, 24px); }
+.pz-item--2 .pz-label { font-size: clamp(22px, 0.88vw, 26px); }
 
 .pz-item--3 .pz-value {
   font-size: clamp(28px, 4.5vw, 60px);
   color: var(--cream-muted);
 }
-.pz-item--3 .pz-label { font-size: clamp(18px, 0.7vw, 20px); }
+.pz-item--3 .pz-label { font-size: clamp(20px, 0.77vw, 22px); }
 
 .pz-context {
   font-family: var(--mono);
@@ -1360,6 +1365,13 @@ ul.pz-context {
 /* ══════════════════════════════════════════════════════════════════════════
    ACTION GRID — P14b · nuanced who/what/when
    ══════════════════════════════════════════════════════════════════════════ */
+
+#p14b *,
+#p14b *::before,
+#p14b *::after {
+  margin: revert;
+}
+
 .panel[data-panel-type="action_grid"] .panel-center {
   display: flex;
 }
@@ -1381,13 +1393,13 @@ ul.pz-context {
 .ag-row {
   display: grid;
   grid-template-columns: clamp(160px, 18vw, 220px) 1fr;
-  gap: clamp(16px, 2.5vw, 36px);
+  gap: clamp(18px, 3vw, 45px);
   padding: clamp(14px, 2.2vh, 22px) 0;
   border-top: 1px solid rgba(196,163,90,0.15);
   align-items: start;
 }
 
-.ag-row:first-child { border-top: none; padding-top: 0; }
+.ag-row:first-child { border-top: none; }
 
 /* Left meta: actor name + when */
 .ag-meta { display: block; }
