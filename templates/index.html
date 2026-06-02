@@ -356,20 +356,29 @@
     {% if panel.kicker is defined %}
     <div class="kicker">{{ panel.kicker }}</div>
     {% endif %}
-    <div class="pz-items">
-      {% for item in panel.cascade %}
-      <div class="pz-item pz-item--{{ loop.index }}">
-        <span class="pz-value">{{ item.value }}</span>
-        <span class="pz-label">{{ item.label }}</span>
+    <div class="pz-columns">
+      <div class="pz-left">
+        <div class="pz-items">
+          {% for item in panel.cascade %}
+          <div class="pz-item pz-item--{{ loop.index }}">
+            <span class="pz-value">{{ item.value }}</span>
+            <span class="pz-label">{{ item.label }}</span>
+          </div>
+          {% endfor %}
+        </div>
       </div>
-      {% endfor %}
+      <div class="pz-right">
+        {% if panel.context is defined %}
+          {% if panel.context is string %}
+          <p class="pz-context">{{ panel.context }}</p>
+          {% else %}
+          <ul class="pz-context">
+            {% for item in panel.context %}<li>{{ item }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        {% endif %}
+      </div>
     </div>
-    {% if panel.context is defined %}
-    <p class="pz-context">{{ panel.context }}</p>
-    {% endif %}
-    {% if panel.body_text %}
-    <p class="article-body">{{ panel.body_text }}</p>
-    {% endif %}
   </div>
 </div>
 

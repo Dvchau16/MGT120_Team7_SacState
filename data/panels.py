@@ -175,7 +175,11 @@ PANELS = [
         "kicker": "The Exception",
         "headline": "One department. One person. Doesn't scale.",
         "headline_muted_from": "Doesn't scale.",
-        "body_text": "Top 10 in California for professional geologist licensure pass rates. Students at the USGS, CalTrans, state water agencies. The system works, because one department chair knows every hiring manager by name. That's not a system. That's a single point of failure.",
+        "body_text": [
+            "Top 10 in CA for professional geologist licensure pass rates.",
+            "The system works, because one department chair knows every hiring manager by name.",
+            "That's not a system, is a single point of failure.",
+        ],
     },
     {
         "id": "p9",
@@ -195,7 +199,7 @@ PANELS = [
             },
             {
                 "word": "An Infrastructure.",
-                "note": "A system that works for the student who cannot afford to say no to an offer. Internship Access Fund: $150K annually, $1,500–$2,500 stipends for financial-aid-eligible students."
+                "note": "Internship Access Fund: $150K annually, $1,500–$2,500 stipends for financial-aid-eligible students."
             },
         ],
     },
@@ -211,8 +215,12 @@ PANELS = [
             {"value": "Zero",       "label": "COSTS"},
             {"value": "June 2026",  "label": "START DATE"},
         ],
-        "context": "Five decisions the Provost can make this summer. No budget line. No employer at the table. No approval chain beyond the office.",
-        "body_text": "Approval timeline cap. Employer-alignment question in tenure review. Competency fast-track. Handshake intake configuration. One workflow update.",
+        "context": [
+            "Five decisions the Provost can make this summer.",
+            "No budget line.",
+            "No employer at the table.",
+            "No approval chain beyond the office.",
+        ],
     },
     {
         "id": "p11",
