@@ -81,7 +81,6 @@
   </div>
 </div>
 <div class="hero-sidebar">
-  <div class="hero-byline">{{ panel.persona.byline }}</div>
   <div class="hero-cards">
     {% for card in panel.persona.sidebar %}
     <div class="hero-card">
@@ -144,7 +143,13 @@
   <p class="article-caption">{{ panel.caption }}</p>
   {% endif %}
   {% if panel.body_text %}
-  <p class="article-body">{{ panel.body_text }}</p>
+    {% if panel.body_text is string %}
+    <p class="article-body">{{ panel.body_text }}</p>
+    {% else %}
+    <ul class="article-body">
+      {% for item in panel.body_text %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% endif %}
   {% endif %}
 </div>
 
@@ -394,7 +399,15 @@
           <div class="ag-who">{{ actor.who }}</div>
           <div class="ag-when">{{ actor.when }}</div>
         </div>
-        <div class="ag-what">{{ actor.what }}</div>
+        <div class="ag-what">
+          {% if actor.what is string %}
+            {{ actor.what }}
+          {% else %}
+            <ul>
+              {% for item in actor.what %}<li>{{ item }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </div>
       </div>
       {% endfor %}
     </div>
