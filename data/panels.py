@@ -120,7 +120,7 @@ PANELS = [
 
         "image": None,
         "stat": "2028",
-        "stat_color": "#F5F0E6",
+        "stat_color": "#E8D5A3",
         "stat_size": "clamp(96px, 18vw, 220px)",
         "stat_label": "The year a curriculum change made today reaches a student. The system is working exactly as designed.",
         "body_text": "Miss the February 6th catalog deadline at any stage and the fix waits another full year. The Geology Department Head is meeting with faculty now. Her change won't appear in the catalog until 2028.",
