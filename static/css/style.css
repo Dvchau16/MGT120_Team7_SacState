@@ -1151,10 +1151,9 @@ ul.article-body {
 
 .stark-ghost {
   position: absolute;
-  top: 5%;
-  left: 50%;
+  left: 52%;
   transform: translateX(-50%);
-  width: min(520px, 72vw);
+  width: min(600px, 72vw);
   text-align: left;
   pointer-events: none;
   user-select: none;
@@ -1162,11 +1161,11 @@ ul.article-body {
 
 .stark-ghost__line {
   font-family: var(--mono);
-  font-size: clamp(12px, 1vw, 15px);
+  font-size: clamp(16px, 1.5vw, 20px);
   letter-spacing: 0.06em;
   line-height: 1.95;
   color: var(--cream);
-  opacity: 0.35;   /* visible enough to read as a rejection letter, behind the headline */
+  opacity: 0.35;
 }
 
 /* The central stark statement */

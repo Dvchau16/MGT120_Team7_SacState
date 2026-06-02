@@ -89,7 +89,6 @@ PANELS = [
 
         "image": None,
         "headline": "The degree was supposed to be enough.",
-        "dateline": "Sacramento State Career Fair · Spring 2026 · Filed for record",
         "ghost_lines": [
             "Dear Applicant,",
             "We have reviewed your application and appreciate your interest.",
@@ -176,13 +175,13 @@ PANELS = [
         "bg": "#010C05",
 
         "image": None,
-        "kicker": "Hiring Manager · Primary Interview · On Record",
+        "kicker": "Career Center Report",
         "left_stat":  "9/10",
         "left_label": "candidates at Sac State career fairs could not articulate their career goal",
         "left_color": "#E8D5A3",
         "connector": "·",
-        "right_stat":  "52%",
-        "right_label": "Class of 2023 underemployed within 12 months of graduation (NSSE 2023)",
+        "right_stat":  "54%",
+        "right_label": "Class of 2024 Reported \"Positive outcomes\" (38% found jobs, 16% continuing education)",
         "right_color": "#C4A35A",
     },
     {
