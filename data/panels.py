@@ -183,7 +183,7 @@ PANELS = [
         "bg": "#043927",
 
         "image": None,
-        "kicker": "The Turning Point · Three Structural Changes",
+        "kicker": "Future State · Three Asks",
         "asks": [
             {
                 "word": "A Pipeline.",
@@ -198,7 +198,6 @@ PANELS = [
                 "note": "A system that works for the student who cannot afford to say no to an offer. Internship Access Fund: $150K annually, $1,500–$2,500 stipends for financial-aid-eligible students."
             },
         ],
-        "body_text": "This is not a wishlist. Every item below is achievable with existing authority, existing tools, and existing staff.",
     },
     {
         "id": "p10",
@@ -250,7 +249,6 @@ PANELS = [
             {"number": "100",    "label": "guaranteed internship slots per semester"},
             {"number": "2029",   "label": "first year internship placement rates by major in Factbook"},
         ],
-        "body_text": "Every student passing through a required junior-year course is in the system. The Factbook shows internship placement rates alongside graduation rates for the first time.",
     },
     {
         "id": "p13b",
@@ -272,7 +270,11 @@ PANELS = [
         "kicker": "Year 3 · Resolution",
         "headline": "He got the job.",
         "headline_color": "#E8D5A3",
-        "body_text": "He didn't apply cold. He walked in warm: introduced, prepared, credentialed. His parents get their return on $113,696. The degree meant something because the institution made it mean something.",
+        "body_text": [
+            "He didn't apply cold.",
+            "He walked in warm: introduced, prepared, credentialed.",
+            "His parents get their return on $113,696.",
+        ],
     },
     {
         "id": "p14b",
@@ -285,22 +287,38 @@ PANELS = [
             {
                 "who": "The Provost",
                 "when": "June 2026",
-                "what": "Five policy changes: cap approval timelines, add employer-alignment question to tenure file, create a competency fast-track, configure intake form, update one workflow. No budget. No Senate vote.",
+                "what": [
+                    "Cap approval timelines",
+                    "Add employer-alignment question to tenure file",
+                    "Create a competency fast-track",
+                    "Configure intake form",
+                ],
             },
             {
                 "who": "University Enterprises",
                 "when": "Now",
-                "what": "Employer outreach begins immediately. Three signed agreements by December. Each employer commits to two slots and one annual survey. Target: regional tech, health systems, state agencies. Internship Access Fund launched simultaneously, stipends ensure financial aid is not a barrier to accepting a slot.",
+                "what": [
+                    "Employer outreach begins immediately",
+                    "Three signed agreements by December",
+                    "Each employer commits to two slots and one annual survey",
+                    "Deploy Internship Access Fund stipends",
+                ],
             },
             {
                 "who": "Career Center",
                 "when": "Fall 2026",
-                "what": "Employer-in-Residence replaces one career fair event. One employer, one department, ten pre-scheduled student meetings through Handshake. The scheduling already works. This is a configuration.",
+                "what": [
+                    "Replace career fair with an Employer-in-Residence event",
+                    "Launch pilot with 1 employer, 1 department, and 10 student meetings",
+                ],
             },
             {
                 "who": "Faculty",
                 "when": "Year 2",
-                "what": "Capstone course designation. Students produce a portfolio artifact assessed by practitioners drawn from the employer council, not faculty alone.",
+                "what": [
+                    "Capstone course designation",
+                    "Student portfolios evaluated by employer council, not just faculty",
+                ],
             },
         ],
     },
