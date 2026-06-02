@@ -110,7 +110,7 @@ PANELS = [
         "kicker": "Curriculum Design",
         "headline": "Employers are not in this room.",
         "headline_muted_from": "this room.",
-        "body_text": "A faculty member told us she doesn't consider employer feedback when building courses, not from indifference, but because the institution never built a door for that signal to walk through.",
+        "body_text": "Faculty cannot access or utilize employer feedback due to a lack of formal institutional channels.",
     },
     {
         "id": "p5",
