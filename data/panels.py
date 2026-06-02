@@ -146,14 +146,14 @@ PANELS = [
         "bg": "#021A0F",
 
         "image": "images/geology.jpg",
-        "image_label": "Geology Dept. · Top 10 in CA for professional licensure",
+        "image_label": "Geology Dept",
         "kicker": "The Exception",
         "headline": "One department. One person. Doesn't scale.",
         "headline_muted_from": "Doesn't scale.",
         "body_text": [
-            "Top 10 in CA for professional geologist licensure pass rates.",
-            "The system works, because one department chair knows every hiring manager by name.",
-            "That's not a system, is a single point of failure.",
+            "CA Top-10 Licensure Pass Rates.",
+            "Dependent on Chair's Personal Network.",
+            "A Single Point of Failure.",
         ],
     },
     {
@@ -241,22 +241,6 @@ PANELS = [
         "right_label": "50 agreements · year 3 · 100 guaranteed slots/sem",
     },
     {
-        "id": "p11b",
-        "type": "image_only",
-        "bg": "#010C05",
-
-        "image": "images/employer_survey.jpg",
-        "image_label": "Employer survey results",
-    },
-    {
-        "id": "p11c",
-        "type": "image_only",
-        "bg": "#010C05",
-
-        "image": "images/handshake.jpg",
-        "image_label": "Handshake platform",
-    },
-    {
         "id": "p11d",
         "type": "image_only",
         "bg": "#010C05",
@@ -271,6 +255,22 @@ PANELS = [
 
         "image": "images/canvas.jpg",
         "image_label": "Canvas",
+    },
+    {
+        "id": "p11c",
+        "type": "image_only",
+        "bg": "#010C05",
+
+        "image": "images/handshake.jpg",
+        "image_label": "Handshake platform",
+    },
+    {
+        "id": "p11b",
+        "type": "image_only",
+        "bg": "#010C05",
+
+        "image": "images/employer_survey.jpg",
+        "image_label": "Employer survey results",
     },
     {
         "id": "p12",
