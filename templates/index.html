@@ -181,8 +181,17 @@
     {% if panel.stat_label is defined %}
     <div class="stat-lbl">{{ panel.stat_label }}</div>
     {% endif %}
+    {% if panel.stat_sublabel is defined %}
+    <div class="stat-sublbl">{{ panel.stat_sublabel }}</div>
+    {% endif %}
     {% if panel.body_text %}
-    <p class="article-body">{{ panel.body_text }}</p>
+      {% if panel.body_text is string %}
+      <p class="article-body">{{ panel.body_text }}</p>
+      {% else %}
+      <ul class="article-body">
+        {% for item in panel.body_text %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% endif %}
     {% endif %}
   </div>
 </div>

@@ -357,6 +357,33 @@ html, body {
   max-width: 780px;
 }
 
+.stat-sublbl {
+  font-family: var(--mono);
+  font-size: clamp(18px, 1.6vw, 24px);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--sac-gold-light);
+  line-height: 1.75;
+  margin-top: clamp(4px, 0.6vh, 8px);
+  margin-bottom: clamp(8px, 1.4vh, 14px);
+}
+
+#p5 .stat-lbl {
+  font-size: clamp(22px, 2vw, 30px);
+  max-width: none;
+}
+
+#p5 .article-body {
+  font-family: var(--mono);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: clamp(18px, 1.6vw, 24px);
+  color: var(--cream);
+  list-style: disc;
+  padding-left: 1.75em;
+}
+
 
 ul.article-body {
   list-style: disc;
@@ -494,9 +521,8 @@ ul.article-body {
   font-size: clamp(14px, 1.1vw, 17px);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--cream-muted);
-  max-width: 560px;
-  line-height: 1.75;
+  color: var(--cream);
+  line-height: 2.5;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1516,6 +1542,15 @@ ul.pz-context {
 .panel[data-panel-type="image_only"] .real-img {
   position: absolute;
   inset: 0;
+}
+
+#p11b .real-img,
+#p11c .real-img,
+#p11d .real-img,
+#p11e .real-img {
+  object-fit: contain;
+  object-position: center center;
+  padding-top: 5vh;
 }
 /* Zoom these out: show the whole image instead of cropping to fill.
    empty_chair (p4) 
