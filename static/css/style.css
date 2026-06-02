@@ -289,7 +289,7 @@ html, body {
 .close-wrap { text-align: center; max-width: 740px; }
 
 #p5 .stat-wrap { width: auto; max-width: none; }
-#p3 .stat-wrap { width: auto; }
+#p3 .stat-wrap { max-width: fit-content; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    TYPOGRAPHY — Kicker, Headline, Fake Body
@@ -384,6 +384,11 @@ html, body {
 #p5 .stat-lbl {
   font-size: clamp(22px, 2vw, 30px);
   max-width: none;
+}
+
+#p3 .stat-lbl {
+  white-space: pre-line;
+  font-size: clamp(22px, 2vw, 30px);
 }
 
 #p5 .article-body {
