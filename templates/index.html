@@ -175,6 +175,9 @@
     <div class="kicker">{{ panel.kicker }}</div>
     {% endif %}
     <div class="stat-num"{% if panel.stat_size is defined %} style="font-size:{{ panel.stat_size }};{% if panel.stat_color is defined %}color:{{ panel.stat_color }};{% endif %}"{% elif panel.stat_color is defined %} style="color:{{ panel.stat_color }};"{% endif %}>{{ panel.stat }}</div>
+    {% if panel.stat2 is defined %}
+    <div class="stat-num stat-num--sub"{% if panel.stat2_size is defined %} style="font-size:{{ panel.stat2_size }};{% if panel.stat2_color is defined %}color:{{ panel.stat2_color }};{% endif %}"{% elif panel.stat2_color is defined %} style="color:{{ panel.stat2_color }};"{% endif %}>{{ panel.stat2 }}</div>
+    {% endif %}
     {% if panel.stat_label is defined %}
     <div class="stat-lbl">{{ panel.stat_label }}</div>
     {% endif %}
@@ -356,20 +359,29 @@
     {% if panel.kicker is defined %}
     <div class="kicker">{{ panel.kicker }}</div>
     {% endif %}
-    <div class="pz-items">
-      {% for item in panel.cascade %}
-      <div class="pz-item pz-item--{{ loop.index }}">
-        <span class="pz-value">{{ item.value }}</span>
-        <span class="pz-label">{{ item.label }}</span>
+    <div class="pz-columns">
+      <div class="pz-left">
+        <div class="pz-items">
+          {% for item in panel.cascade %}
+          <div class="pz-item pz-item--{{ loop.index }}">
+            <span class="pz-value">{{ item.value }}</span>
+            <span class="pz-label">{{ item.label }}</span>
+          </div>
+          {% endfor %}
+        </div>
       </div>
-      {% endfor %}
+      <div class="pz-right">
+        {% if panel.context is defined %}
+          {% if panel.context is string %}
+          <p class="pz-context">{{ panel.context }}</p>
+          {% else %}
+          <ul class="pz-context">
+            {% for item in panel.context %}<li>{{ item }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        {% endif %}
+      </div>
     </div>
-    {% if panel.context is defined %}
-    <p class="pz-context">{{ panel.context }}</p>
-    {% endif %}
-    {% if panel.body_text %}
-    <p class="article-body">{{ panel.body_text }}</p>
-    {% endif %}
   </div>
 </div>
 

@@ -102,17 +102,6 @@ PANELS = [
         ],
     },
     {
-        "id": "p3",
-        "type": "stat_giant",
-        "bg": "#010C05",
-
-        "image": None,
-        "stat": "Unused.",
-        "stat_size": "clamp(52px, 9vw, 120px)",
-        "stat_label": "Big Interview is Sacramento State's licensed mock interview platform, free to every enrolled student. Every student surveyed had never opened it. No major requires it.",
-        "body_text": "Students found opportunities through a professor or a personal contact, not through Handshake, not the Career Center. The tool exists. The mandate does not.",
-    },
-    {
         "id": "p4",
         "type": "article",
         "bg": "#021A0F",
@@ -122,7 +111,6 @@ PANELS = [
         "kicker": "Curriculum Design",
         "headline": "Employers are not in this room.",
         "headline_muted_from": "this room.",
-        "caption": "Every course at Sacramento State is built against internally-defined learning outcomes. Employers are absent from every stage of writing them.",
         "body_text": "A faculty member told us she doesn't consider employer feedback when building courses, not from indifference, but because the institution never built a door for that signal to walk through.",
     },
     {
@@ -147,23 +135,6 @@ PANELS = [
         "kicker": "Faculty Incentives",
         "quote": "My tenure was based on research publications and service to the school, not because my students got jobs.",
         "attribution": "(Former) Department Chair · Sacramento State",
-        "body_text": "The system evaluates faculty on research output and satisfaction scores. Course redesign earns no tenure credit, no protected time, no compensation. The rational move is to leave the existing course alone.",
-    },
-    {
-        "id": "p7",
-        "type": "split_stat",
-        "bg": "#010C05",
-
-        "image": None,
-        "kicker": "Hiring Manager · Primary Interview · On Record",
-        "left_stat":  "9 in 10",
-        "left_label": "candidates at Sac State career fairs could not articulate their career goal",
-        "left_color": "cream",
-        "connector": "·",
-        "right_stat":  "52%",
-        "right_label": "Class of 2023 underemployed within 12 months of graduation (NSSE 2023)",
-        "right_color": "#C4A35A",
-        "body_text": "In a soft market, the candidates who get the few available jobs have applied experience and warm introductions, exactly what this pipeline produces.",
     },
     {
         "id": "p8",
@@ -175,7 +146,41 @@ PANELS = [
         "kicker": "The Exception",
         "headline": "One department. One person. Doesn't scale.",
         "headline_muted_from": "Doesn't scale.",
-        "body_text": "Top 10 in California for professional geologist licensure pass rates. Students at the USGS, CalTrans, state water agencies. The system works, because one department chair knows every hiring manager by name. That's not a system. That's a single point of failure.",
+        "body_text": [
+            "Top 10 in CA for professional geologist licensure pass rates.",
+            "The system works, because one department chair knows every hiring manager by name.",
+            "That's not a system, is a single point of failure.",
+        ],
+    },
+    {
+        "id": "p3",
+        "type": "stat_giant",
+        "bg": "#010C05",
+
+        "image": None,
+        "stat": "Unused.",
+        "stat_size": "clamp(52px, 9vw, 120px)",
+        "stat2": "Big Interview",
+        "stat2_size": "clamp(28px, 5vw, 66px)",
+        "stat2_color": "#F5F0E6",
+        "stat_label": "Big Interview is Sacramento State's licensed mock interview platform, free to every enrolled student. Every student surveyed had never opened it. No major requires it.",
+        "body_text": "Students found opportunities through a professor or a personal contact, not through Handshake, not the Career Center. The tool exists. The mandate does not.",
+    },
+    {
+        "id": "p7",
+        "type": "split_stat",
+        "bg": "#010C05",
+
+        "image": None,
+        "kicker": "Hiring Manager · Primary Interview · On Record",
+        "left_stat":  "9/10",
+        "left_label": "candidates at Sac State career fairs could not articulate their career goal",
+        "left_color": "#E8D5A3",
+        "connector": "·",
+        "right_stat":  "52%",
+        "right_label": "Class of 2023 underemployed within 12 months of graduation (NSSE 2023)",
+        "right_color": "#C4A35A",
+        "body_text": "In a soft market, the candidates who get the few available jobs have applied experience and warm introductions, exactly what this pipeline produces.",
     },
     {
         "id": "p9",
@@ -195,7 +200,7 @@ PANELS = [
             },
             {
                 "word": "An Infrastructure.",
-                "note": "A system that works for the student who cannot afford to say no to an offer. Internship Access Fund: $150K annually, $1,500–$2,500 stipends for financial-aid-eligible students."
+                "note": "Internship Access Fund: $150K annually, $1,500–$2,500 stipends for financial-aid-eligible students."
             },
         ],
     },
@@ -211,8 +216,12 @@ PANELS = [
             {"value": "Zero",       "label": "COSTS"},
             {"value": "June 2026",  "label": "START DATE"},
         ],
-        "context": "Five decisions the Provost can make this summer. No budget line. No employer at the table. No approval chain beyond the office.",
-        "body_text": "Approval timeline cap. Employer-alignment question in tenure review. Competency fast-track. Handshake intake configuration. One workflow update.",
+        "context": [
+            "Five decisions the Provost can make this summer.",
+            "No budget line.",
+            "No employer at the table.",
+            "No approval chain beyond the office.",
+        ],
     },
     {
         "id": "p11",
@@ -222,7 +231,7 @@ PANELS = [
         "image": None,
         "kicker": "The Employer Pipeline",
         "left_stat":  "3%",
-        "left_color": "cream",
+        "left_color": "#E8D5A3",
         "left_label": "of target reached · fall 2026",
         "right_stat":  "100%",
         "right_color": "#C4A35A",
@@ -261,34 +270,17 @@ PANELS = [
         "context": "In a soft market, the candidates who get the few available jobs are the ones with applied experience and a warm introduction. The institution that builds this now isn't scrambling when hiring rebounds. Sacramento State needs to already be at the table.",
     },
     {
-        "id": "p14",
-        "type": "article",
-        "bg": "#043927",
-
-        "image": "images/student_recruiter.jpg",
-        "image_label": "Ryan · Offer letter · Year 3",
-        "kicker": "Year 3 · Resolution",
-        "headline": "He got the job.",
-        "headline_color": "#E8D5A3",
-        "body_text": [
-            "He didn't apply cold.",
-            "He walked in warm: introduced, prepared, credentialed.",
-            "His parents get their return on $113,696.",
-        ],
-    },
-    {
         "id": "p14b",
         "type": "action_grid",
         "bg": "#021A0F",
 
         "image": None,
-        "kicker": "Who Moves First · Authority Already Exists",
+        "kicker": "Who moves first",
         "actors": [
             {
                 "who": "The Provost",
                 "when": "June 2026",
                 "what": [
-                    "Cap approval timelines",
                     "Add employer-alignment question to tenure file",
                     "Create a competency fast-track",
                     "Configure intake form",
@@ -298,9 +290,8 @@ PANELS = [
                 "who": "University Enterprises",
                 "when": "Now",
                 "what": [
-                    "Employer outreach begins immediately",
+                    "Employer outreach begins",
                     "Three signed agreements by December",
-                    "Each employer commits to two slots and one annual survey",
                     "Deploy Internship Access Fund stipends",
                 ],
             },
@@ -320,6 +311,22 @@ PANELS = [
                     "Student portfolios evaluated by employer council, not just faculty",
                 ],
             },
+        ],
+    },
+    {
+        "id": "p14",
+        "type": "article",
+        "bg": "#043927",
+
+        "image": "images/student_recruiter.jpg",
+        "image_label": "Ryan · Offer letter · Year 3",
+        "kicker": "Year 3 · Resolution",
+        "headline": "He got the job.",
+        "headline_color": "#E8D5A3",
+        "body_text": [
+            "He didn't apply cold.",
+            "He walked in warm: introduced, prepared, credentialed.",
+            "His parents get their return on $113,696.",
         ],
     },
     {
