@@ -975,7 +975,7 @@ ul.article-body {
 .close-head {
   font-family: var(--serif);
   font-weight: 900;
-  font-size: clamp(36px, 5vw, 80px);
+  font-size: clamp(40px, 8vw, 80px);
   line-height: 1.04;
   letter-spacing: -0.025em;
   color: var(--cream);
@@ -1128,16 +1128,16 @@ ul.article-body {
   font-size: clamp(28px, 1.95vw, 30px);
   line-height: 1.18;
   letter-spacing: -0.01em;
-  color: var(--cream);
+  color: var(--sac-gold-light);
   margin-bottom: clamp(4px, 0.8vh, 7px);
 }
 
 /* Card desc — serif italic deck/lede, not mono */
 .hero-card__desc {
-  font-family: var(--serif);
-  font-style: italic;
+  font-family: var(--mono);
+  font-style: normal;
   font-size: clamp(20px, 1.67vw, 28px);
-  color: var(--cream-dim);
+  color: var(--cream);
   line-height: 1.55;
 }
 
@@ -1647,7 +1647,7 @@ ul.pz-context {
   .ag-who         { font-size: clamp(22px, 1.5vw, 28px); }
   .ag-when        { font-size: clamp(17px, 1.05vw, 20px); }
   .impact-lbl      { font-size: clamp(14px, 0.92vw, 18px); }
-  .close-head       { font-size: clamp(60px, 4.2vw, 80px); }
+  .close-head       { font-size: clamp(72px, 4.2vw, 80px); }
   .close-sub       { font-size: clamp(15px, 1vw, 20px); }
   .close-foot      { font-size: clamp(13px, 0.85vw, 16px); }
   .hero-byline     { font-size: clamp(13px, 0.88vw, 16px); }
