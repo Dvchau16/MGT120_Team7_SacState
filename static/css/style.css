@@ -289,7 +289,7 @@ html, body {
 .close-wrap { text-align: center; max-width: 740px; }
 
 #p5 .stat-wrap { width: auto; max-width: none; }
-#p3 .stat-wrap { width: auto; max-width: none; }
+#p3 .stat-wrap { width: auto; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    TYPOGRAPHY — Kicker, Headline, Fake Body
@@ -356,6 +356,7 @@ html, body {
   border-top: none;
   max-width: 780px;
 }
+
 
 ul.article-body {
   list-style: disc;
@@ -523,7 +524,7 @@ ul.article-body {
   font-family: var(--serif);
   font-weight: 700;
   font-style: italic;
-  font-size: clamp(18px, 2.4vw, 34px);
+  font-size: clamp(30px, 3vw, 40px);
   line-height: 1.32;
   letter-spacing: -0.015em;
   color: var(--cream);
@@ -564,7 +565,7 @@ ul.article-body {
 .two-col__num {
   font-family: var(--serif);
   font-weight: 900;
-  font-size: clamp(40px, 6vw, 82px);
+  font-size: clamp(52px, 7.8vw, 107px);
   line-height: 0.95;
   letter-spacing: -0.03em;
   margin-bottom: clamp(8px, 1.4vh, 14px);
@@ -572,7 +573,7 @@ ul.article-body {
 
 .two-col__lbl {
   font-family: var(--mono);
-  font-size: clamp(13px, 1vw, 15px);
+  font-size: clamp(17px, 1.3vw, 20px);
   text-transform: uppercase;
   letter-spacing: 0.10em;
   color: var(--cream);
@@ -677,7 +678,7 @@ ul.article-body {
 
 .pipe-lbl {
   font-family: var(--mono);
-  font-size: clamp(13px, 1vw, 15px);
+  font-size: clamp(20px, 1vw, 15px);
   text-transform: uppercase;
   letter-spacing: 0.10em;
   color: var(--cream);
@@ -930,7 +931,7 @@ ul.article-body {
 .close-head {
   font-family: var(--serif);
   font-weight: 900;
-  font-size: clamp(32px, 4.2vw, 72px);
+  font-size: clamp(36px, 5vw, 80px);
   line-height: 1.04;
   letter-spacing: -0.025em;
   color: var(--cream);
@@ -1255,8 +1256,8 @@ ul.pz-context {
 
 .pz-context {
   font-family: var(--mono);
-  font-size: clamp(16px, 1.5vw, 24px);
-  color: var(--cream-muted);
+  font-size: clamp(18px, 1.5vw, 24px);
+  color: var(--cream);
   letter-spacing: 0.05em;
   line-height: 1.75;
 }
@@ -1284,7 +1285,7 @@ ul.pz-context {
   font-family: var(--serif);
   font-weight: 700;
   font-style: italic;
-  font-size: clamp(40px, 3.5vw, 75px);
+  font-size: clamp(45px, 3.9vw, 75px);
   line-height: 1.2;
   color: var(--cream-muted);
   margin-bottom: clamp(10px, 1.8vh, 18px);
@@ -1303,15 +1304,9 @@ ul.pz-context {
 }
 
 .reframe-context {
-  font-family: var(--mono);
-  font-size: clamp(13px, 1vw, 15px);
-  color: var(--cream-muted);
-  letter-spacing: 0.05em;
-  line-height: 1.75;
   max-width: 560px;
-  margin: 0 auto;
-  border-top: 1px solid rgba(196,163,90,0.18);
-  padding-top: clamp(14px, 2.2vh, 22px);
+  margin: auto;
+  border-top: 2px solid rgba(196,163,90,0.18);
 }
 /* P14 */
 #p4
@@ -1586,7 +1581,7 @@ ul.pz-context {
   .stat-num        { font-size: clamp(100px, 16vw, 280px); }
   .mast-name       { font-size: clamp(64px, 7.5vw, 160px); }
   .pull-q p        { font-size: clamp(22px, 2.4vw, 52px); }
-  .two-col__num    { font-size: clamp(52px, 6vw, 108px); }
+  .two-col__num    { font-size: clamp(68px, 7.8vw, 140px); }
   .pipe-num        { font-size: clamp(68px, 8.5vw, 148px); }
   .strip__pub      { font-size: clamp(16px, 1.1vw, 22px); }
   .strip__meta     { font-size: clamp(11px, 0.78vw, 15px); }

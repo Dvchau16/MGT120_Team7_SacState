@@ -120,7 +120,7 @@ PANELS = [
 
         "image": None,
         "stat": "2028",
-        "stat_color": "#F5F0E6",
+        "stat_color": "#E8D5A3",
         "stat_size": "clamp(96px, 18vw, 220px)",
         "stat_label": "The year a curriculum change made today reaches a student. The system is working exactly as designed.",
         "body_text": "Miss the February 6th catalog deadline at any stage and the fix waits another full year. The Geology Department Head is meeting with faculty now. Her change won't appear in the catalog until 2028.",
@@ -163,7 +163,7 @@ PANELS = [
         "stat2": "Big Interview",
         "stat2_size": "clamp(28px, 5vw, 66px)",
         "stat2_color": "#F5F0E6",
-        "stat_label": "Big Interview is Sacramento State's licensed mock interview platform, free to every enrolled student. Every student surveyed had never opened it. No major requires it.",
+        "stat_label": "Sacramento State's licensed mock interview platform, free to every enrolled student. Every student surveyed had never opened it. No major requires it.",
         "body_text": "Students found opportunities through a professor or a personal contact, not through Handshake, not the Career Center. The tool exists. The mandate does not.",
     },
     {
@@ -180,7 +180,6 @@ PANELS = [
         "right_stat":  "52%",
         "right_label": "Class of 2023 underemployed within 12 months of graduation (NSSE 2023)",
         "right_color": "#C4A35A",
-        "body_text": "In a soft market, the candidates who get the few available jobs have applied experience and warm introductions, exactly what this pipeline produces.",
     },
     {
         "id": "p9",
@@ -236,7 +235,6 @@ PANELS = [
         "right_stat":  "100%",
         "right_color": "#C4A35A",
         "right_label": "50 agreements · year 3 · 100 guaranteed slots/sem",
-        "body_text": "Sacramento has state agencies, health systems, environmental consulting, and technology employers. The constraint is outreach capacity, not employer interest.",
     },
     {
         "id": "p12",
@@ -267,7 +265,7 @@ PANELS = [
         "image": None,
         "line1": "They're not hiring.",
         "line2": "That's exactly the point.",
-        "context": "In a soft market, the candidates who get the few available jobs are the ones with applied experience and a warm introduction. The institution that builds this now isn't scrambling when hiring rebounds. Sacramento State needs to already be at the table.",
+        "context": "",
     },
     {
         "id": "p14b",
