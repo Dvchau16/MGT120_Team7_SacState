@@ -110,7 +110,7 @@ PANELS = [
         "kicker": "Curriculum Design",
         "headline": "Employers are not in this room.",
         "headline_muted_from": "this room.",
-        "body_text": "A faculty member told us she doesn't consider employer feedback when building courses, not from indifference, but because the institution never built a door for that signal to walk through.",
+        "body_text": "Faculty cannot access or utilize employer feedback due to a lack of formal institutional channels.",
     },
     {
         "id": "p5",
@@ -166,8 +166,7 @@ PANELS = [
         "stat2": "Big Interview",
         "stat2_size": "clamp(28px, 5vw, 66px)",
         "stat2_color": "#F5F0E6",
-        "stat_label": "Sacramento State's licensed mock interview platform, free to every enrolled student. Every student surveyed had never opened it. No major requires it.",
-        "body_text": "Students found opportunities through a professor or a personal contact, not through Handshake, not the Career Center. The tool exists. The mandate does not.",
+        "stat_label": "Free to every enrolled student.\nEvery student surveyed had never opened it.\nNo major requires it.",
     },
     {
         "id": "p7",

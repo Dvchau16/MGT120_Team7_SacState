@@ -289,7 +289,7 @@ html, body {
 .close-wrap { text-align: center; max-width: 740px; }
 
 #p5 .stat-wrap { width: auto; max-width: none; }
-#p3 .stat-wrap { width: auto; }
+#p3 .stat-wrap { max-width: fit-content; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    TYPOGRAPHY — Kicker, Headline, Fake Body
@@ -342,7 +342,8 @@ html, body {
   padding-top: clamp(10px, 1.6vh, 16px);
 }
 #p4 .article-body {
-  color: var(--cream-muted);
+  color: var(--cream-dim);
+  font-size: clamp(22px, 1.6vw, 28px);
 }
 
 #p8 .article-body {
@@ -384,6 +385,11 @@ html, body {
 #p5 .stat-lbl {
   font-size: clamp(22px, 2vw, 30px);
   max-width: none;
+}
+
+#p3 .stat-lbl {
+  white-space: pre-line;
+  font-size: clamp(22px, 2vw, 30px);
 }
 
 #p5 .article-body {
@@ -690,7 +696,7 @@ ul.article-body {
   color: var(--cream-muted);
   letter-spacing: 0.04em;
   line-height: 1.75;
-  max-width: 560px;
+  max-width: fit-content;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -970,7 +976,7 @@ ul.article-body {
 .close-head {
   font-family: var(--serif);
   font-weight: 900;
-  font-size: clamp(36px, 5vw, 80px);
+  font-size: clamp(40px, 8vw, 80px);
   line-height: 1.04;
   letter-spacing: -0.025em;
   color: var(--cream);
@@ -1058,7 +1064,7 @@ ul.article-body {
   line-height: 1.03;
   letter-spacing: -0.025em;
   color: var(--cream);
-  margin-bottom: 0;
+  margin: 0;
 }
 
 /* Fake body inside overlay — acts as byline/deck texture */
@@ -1123,16 +1129,16 @@ ul.article-body {
   font-size: clamp(28px, 1.95vw, 30px);
   line-height: 1.18;
   letter-spacing: -0.01em;
-  color: var(--cream);
+  color: var(--sac-gold-light);
   margin-bottom: clamp(4px, 0.8vh, 7px);
 }
 
 /* Card desc — serif italic deck/lede, not mono */
 .hero-card__desc {
-  font-family: var(--serif);
-  font-style: italic;
+  font-family: var(--mono);
+  font-style: normal;
   font-size: clamp(20px, 1.67vw, 28px);
-  color: var(--cream-dim);
+  color: var(--cream);
   line-height: 1.55;
 }
 
@@ -1246,6 +1252,11 @@ ul.pz-context {
   list-style: disc;
   padding-left: 1.4em;
 }
+
+ul.pz-context li + li {
+  margin-top: 0.5em;
+}
+
 #p10 .ul.pz-context {
   padding-left: none;
 }
@@ -1281,19 +1292,19 @@ ul.pz-context {
 
 /* Cascade: item 1 largest → item 3 smallest */
 .pz-item--1 .pz-value { font-size: clamp(72px, 13vw, 164px); }
-.pz-item--1 .pz-label { font-size: clamp(24px, 0.9vw, 32px); }
+.pz-item--1 .pz-label { font-size: clamp(26px, 1vw, 35px); }
 
 .pz-item--2 .pz-value {
   font-size: clamp(44px, 8vw, 100px);
   color: var(--cream);
 }
-.pz-item--2 .pz-label { font-size: clamp(20px, 0.8vw, 24px); }
+.pz-item--2 .pz-label { font-size: clamp(22px, 0.88vw, 26px); }
 
 .pz-item--3 .pz-value {
   font-size: clamp(28px, 4.5vw, 60px);
   color: var(--cream-muted);
 }
-.pz-item--3 .pz-label { font-size: clamp(18px, 0.7vw, 20px); }
+.pz-item--3 .pz-label { font-size: clamp(20px, 0.77vw, 22px); }
 
 .pz-context {
   font-family: var(--mono);
@@ -1354,6 +1365,13 @@ ul.pz-context {
 /* ══════════════════════════════════════════════════════════════════════════
    ACTION GRID — P14b · nuanced who/what/when
    ══════════════════════════════════════════════════════════════════════════ */
+
+#p14b *,
+#p14b *::before,
+#p14b *::after {
+  margin: revert;
+}
+
 .panel[data-panel-type="action_grid"] .panel-center {
   display: flex;
 }
@@ -1375,13 +1393,13 @@ ul.pz-context {
 .ag-row {
   display: grid;
   grid-template-columns: clamp(160px, 18vw, 220px) 1fr;
-  gap: clamp(16px, 2.5vw, 36px);
+  gap: clamp(18px, 3vw, 45px);
   padding: clamp(14px, 2.2vh, 22px) 0;
   border-top: 1px solid rgba(196,163,90,0.15);
   align-items: start;
 }
 
-.ag-row:first-child { border-top: none; padding-top: 0; }
+.ag-row:first-child { border-top: none; }
 
 /* Left meta: actor name + when */
 .ag-meta { display: block; }
@@ -1642,7 +1660,7 @@ ul.pz-context {
   .ag-who         { font-size: clamp(22px, 1.5vw, 28px); }
   .ag-when        { font-size: clamp(17px, 1.05vw, 20px); }
   .impact-lbl      { font-size: clamp(14px, 0.92vw, 18px); }
-  .close-head       { font-size: clamp(60px, 4.2vw, 80px); }
+  .close-head       { font-size: clamp(72px, 4.2vw, 80px); }
   .close-sub       { font-size: clamp(15px, 1vw, 20px); }
   .close-foot      { font-size: clamp(13px, 0.85vw, 16px); }
   .hero-byline     { font-size: clamp(13px, 0.88vw, 16px); }
