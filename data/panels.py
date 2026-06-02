@@ -120,10 +120,14 @@ PANELS = [
 
         "image": None,
         "stat": "2028",
-        "stat_color": "#E8D5A3",
+        "stat_color": "#C4A35A",
         "stat_size": "clamp(96px, 18vw, 220px)",
-        "stat_label": "The year a curriculum change made today reaches a student. The system is working exactly as designed.",
-        "body_text": "Miss the February 6th catalog deadline at any stage and the fix waits another full year. The Geology Department Head is meeting with faculty now. Her change won't appear in the catalog until 2028.",
+        "stat_label": "Timeline: Curriculum Change to Student",
+        "stat_sublabel": "The system is working by design.",
+        "body_text": [
+            "February 6th Catalog Deadline",
+            "Any missed stage = One-Year Wait",
+        ],
     },
     {
         "id": "p6",
@@ -235,6 +239,38 @@ PANELS = [
         "right_stat":  "100%",
         "right_color": "#C4A35A",
         "right_label": "50 agreements · year 3 · 100 guaranteed slots/sem",
+    },
+    {
+        "id": "p11b",
+        "type": "image_only",
+        "bg": "#010C05",
+
+        "image": "images/employer_survey.jpg",
+        "image_label": "Employer survey results",
+    },
+    {
+        "id": "p11c",
+        "type": "image_only",
+        "bg": "#010C05",
+
+        "image": "images/handshake.jpg",
+        "image_label": "Handshake platform",
+    },
+    {
+        "id": "p11d",
+        "type": "image_only",
+        "bg": "#010C05",
+
+        "image": "images/student_intake_form.jpeg",
+        "image_label": "Student intake form",
+    },
+    {
+        "id": "p11e",
+        "type": "image_only",
+        "bg": "#010C05",
+
+        "image": "images/canvas.jpg",
+        "image_label": "Canvas",
     },
     {
         "id": "p12",
