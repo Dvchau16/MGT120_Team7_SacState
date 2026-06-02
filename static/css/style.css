@@ -523,7 +523,7 @@ ul.article-body {
   font-family: var(--serif);
   font-weight: 700;
   font-style: italic;
-  font-size: clamp(18px, 2.4vw, 34px);
+  font-size: clamp(30px, 3vw, 40px);
   line-height: 1.32;
   letter-spacing: -0.015em;
   color: var(--cream);
