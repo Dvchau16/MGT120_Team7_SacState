@@ -259,7 +259,7 @@ PANELS = [
         "type": "image_only",
         "bg": "#010C05",
 
-        "image": "images/canvas.jpg",
+        "image": "images/canvas2.png",
         "image_label": "Canvas",
     },
     {
@@ -284,13 +284,52 @@ PANELS = [
         "bg": "#021A0F",
 
         "image": None,
+        "kicker": "Strategic Roadmap · 2026 – 2028",
+        "headline": "Phase 0 · Phase 1 · Phase 2 · Phase 3",
+        "tl_range": [0, 50],
+        "years": [
+            {"label": "2026", "pos": "1%"},
+            {"label": "2028", "pos": "99%"},
+        ],
+        "phase0": {
+            "label": "Phase Zero",
+            "stat": "June – September 2026",
+            "events": [
+                {"color": "#C4A35A", "text": "3 employer agreements signed → Fall 2026"},
+                {"color": "#5AD88A", "text": "Career Fair employer survey deployed → October 2026"},
+                {"color": "#5AAAE8", "text": "Mock interview required in two courses → Fall 2026"},
+            ],
+        },
+        "zoom_btn": "See 2026 – 2028 →",
+        "legend": [
+            {"color": "#C4A35A", "label": "Employer Agreements"},
+            {"color": "#5AAAE8", "label": "Advisory Council"},
+            {"color": "#5AD88A", "label": "Career Fair Survey"},
+            {"color": "#E87A5A", "label": "Feb 6 Deadline"},
+            {"color": "#C875E8", "label": "EF Roundtable"},
+        ],
     },
     {
         "id": "p12b",
-        "type": "timeline_b",
+        "type": "timeline",
         "bg": "#021A0F",
 
         "image": None,
+        "kicker": "Strategic Roadmap · 2028 – 2030",
+        "headline": "Years three and four.",
+        "tl_range": [50, 100],
+        "years": [
+            {"label": "2028", "pos": "0%"},
+            {"label": "2029", "pos": "50%"},
+            {"label": "2030", "pos": "100%"},
+        ],
+        "legend": [
+            {"color": "#C4A35A", "label": "Employer Agreements"},
+            {"color": "#5AAAE8", "label": "Advisory Council"},
+            {"color": "#5AD88A", "label": "Career Fair Survey"},
+            {"color": "#E87A5A", "label": "Feb 6 Deadline"},
+            {"color": "#C875E8", "label": "EF Roundtable"},
+        ],
     },
     {
         "id": "p13",
