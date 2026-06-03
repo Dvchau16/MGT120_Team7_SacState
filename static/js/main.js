@@ -72,32 +72,47 @@
   }
 
   // ── Build timeline from injected data ─────────────────────────────────────
-  function buildTimeline() {
-    const evC = document.getElementById('tlEvents');
-    const phC = document.getElementById('tlPhases');
+  function buildHalf(rangeStart, rangeEnd, evId, phId) {
+    const evC = document.getElementById(evId);
+    const phC = document.getElementById(phId);
     if (!evC || !phC) return;
 
+    const scale = 100 / (rangeEnd - rangeStart);
+
     (window.TIMELINE_EVENTS || []).forEach(ev => {
+      if (ev.position < rangeStart || ev.position >= rangeEnd) return;
+      const pos = (ev.position - rangeStart) * scale;
       const el = document.createElement('div');
       el.className = 'tl-event';
-      el.style.left = ev.position + '%';
+      el.style.left = pos + '%';
       el.innerHTML = `
         <div class="tl-event__dot" style="background:${ev.color};"></div>
         <div class="tl-event__label">${ev.label}</div>`;
       evC.appendChild(el);
     });
 
-    (window.PHASES || []).forEach(ph => {
+    const visiblePhases = (window.PHASES || [])
+      .map(ph => ({ ...ph, pStart: Math.max(ph.start, rangeStart), pEnd: Math.min(ph.end, rangeEnd) }))
+      .filter(ph => ph.pStart < ph.pEnd);
+
+    if (visiblePhases.length) visiblePhases[visiblePhases.length - 1].pEnd = rangeEnd;
+
+    visiblePhases.forEach(({ pStart, pEnd, color, label, stat }) => {
       const el = document.createElement('div');
       el.className = 'tl-phase';
-      el.style.left       = ph.start + '%';
-      el.style.width      = (ph.end - ph.start) + '%';
-      el.style.background = ph.color;
+      el.style.left       = ((pStart - rangeStart) * scale) + '%';
+      el.style.width      = ((pEnd - pStart) * scale) + '%';
+      el.style.background = color;
       el.innerHTML = `
-        <div class="tl-phase__label">${ph.label}</div>
-        <div class="tl-phase__stat">${ph.stat}</div>`;
+        <div class="tl-phase__label">${label}</div>
+        <div class="tl-phase__stat">${stat}</div>`;
       phC.appendChild(el);
     });
+  }
+
+  function buildTimeline() {
+    buildHalf(0,  50, 'tlEvents',  'tlPhases');   // 2026–2028
+    buildHalf(50, 100, 'tlEvents2', 'tlPhases2'); // 2028–2030
   }
 
   buildTimeline();

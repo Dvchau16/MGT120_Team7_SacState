@@ -239,6 +239,14 @@ PANELS = [
         "right_label": "50 agreements · year 3 · 100 guaranteed slots/sem",
     },
     {
+        "id": "p11f",
+        "type": "image_only",
+        "bg": "#010C05",
+
+        "image": "images/crm.png",
+        "image_label": "CRM",
+    },
+    {
         "id": "p11d",
         "type": "image_only",
         "bg": "#010C05",
@@ -273,6 +281,13 @@ PANELS = [
     {
         "id": "p12",
         "type": "timeline",
+        "bg": "#021A0F",
+
+        "image": None,
+    },
+    {
+        "id": "p12b",
+        "type": "timeline_b",
         "bg": "#021A0F",
 
         "image": None,
@@ -313,17 +328,17 @@ PANELS = [
                 "who": "The Provost",
                 "when": "June 2026",
                 "what": [
-                    "Add employer-alignment question to tenure file",
-                    "Create a competency fast-track",
-                    "Configure intake form",
+                    "Add employer-alignment to tenure files",
+                    "Launch a competency fast-track",
+                    "Redesign curriculum intake forms",
                 ],
             },
             {
                 "who": "University Enterprises",
                 "when": "Now",
                 "what": [
-                    "Employer outreach begins",
-                    "Three signed agreements by December",
+                    "Initiate immediate employer outreach",
+                    "Secure 3 industry agreements by Dec",
                     "Deploy Internship Access Fund stipends",
                 ],
             },
@@ -331,16 +346,18 @@ PANELS = [
                 "who": "Career Center",
                 "when": "Fall 2026",
                 "what": [
-                    "Replace career fair with an Employer-in-Residence event",
-                    "Launch pilot with 1 employer, 1 department, and 10 student meetings",
+                    "Launch Employer-in-Residence series",
+                    "Pilot 10 pre-scheduled student meetings",
+                    "Leverage existing Handshake infrastructure",
                 ],
             },
             {
                 "who": "Faculty",
                 "when": "Year 2",
                 "what": [
-                    "Capstone course designation",
-                    "Student portfolios evaluated by employer council, not just faculty",
+                    "Implement Capstone course designations",
+                    "Shift to employer-led portfolio reviews",
+                    "Embed industry signals into curriculum",
                 ],
             },
         ],

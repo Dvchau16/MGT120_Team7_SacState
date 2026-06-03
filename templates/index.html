@@ -318,10 +318,8 @@
       <div class="timeline-track" id="timelineTrack">
         <div class="tl-years">
           <span style="left:0%">2026</span>
-          <span style="left:25%">2027</span>
-          <span style="left:50%">2028</span>
-          <span style="left:75%">2029</span>
-          <span style="left:100%">2030</span>
+          <span style="left:50%">2027</span>
+          <span style="left:100%">2028</span>
         </div>
         <div class="tl-rule"></div>
         <div class="tl-events" id="tlEvents"></div>
@@ -337,7 +335,37 @@
     </div>
   </div>
 
-  <button class="tl-zoom-btn" id="tlZoomBtn">See all four years →</button>
+  <button class="tl-zoom-btn" id="tlZoomBtn">See 2026 – 2028 →</button>
+</div>
+
+{# ── TIMELINE B (2028–2030) ──────────────────────────────────────────────────── #}
+{% elif panel.type == 'timeline_b' %}
+<div class="tl-wrap">
+  <div class="tl-header">
+    <div class="kicker">Strategic Roadmap · 2028 – 2030</div>
+    <h2 class="headline headline--sm">Years three and four.</h2>
+  </div>
+  <div class="tl-full-view visible" style="display:block;">
+    <div class="timeline-viewport">
+      <div class="timeline-track" id="timelineTrack2">
+        <div class="tl-years">
+          <span style="left:0%">2028</span>
+          <span style="left:50%">2029</span>
+          <span style="left:100%">2030</span>
+        </div>
+        <div class="tl-rule"></div>
+        <div class="tl-events" id="tlEvents2"></div>
+        <div class="tl-phases" id="tlPhases2"></div>
+      </div>
+    </div>
+    <div class="tl-legend">
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#C4A35A;"></span>Employer Agreements</div>
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#5AAAE8;"></span>Advisory Council</div>
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#5AD88A;"></span>Career Fair Survey</div>
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#E87A5A;"></span>Feb 6 Deadline</div>
+      <div class="tl-leg-item"><span class="tl-dot" style="background:#C875E8;"></span>EF Roundtable</div>
+    </div>
+  </div>
 </div>
 
 {# ── IMPACT GRID ────────────────────────────────────────────────────────────── #}
@@ -413,22 +441,20 @@
     {% if panel.kicker is defined %}
     <div class="kicker">{{ panel.kicker }}</div>
     {% endif %}
-    <div class="ag-rows">
+    <div class="ag-cards">
       {% for actor in panel.actors %}
-      <div class="ag-row">
-        <div class="ag-meta">
+      <div class="ag-card">
+        <div class="ag-card__header">
           <div class="ag-who">{{ actor.who }}</div>
-          <div class="ag-when">{{ actor.when }}</div>
+          <div class="ag-badge">{{ actor.when }}</div>
         </div>
-        <div class="ag-what">
+        <ul class="ag-checklist">
           {% if actor.what is string %}
-            {{ actor.what }}
+          <li>{{ actor.what }}</li>
           {% else %}
-            <ul>
-              {% for item in actor.what %}<li>{{ item }}</li>{% endfor %}
-            </ul>
+          {% for item in actor.what %}<li>{{ item }}</li>{% endfor %}
           {% endif %}
-        </div>
+        </ul>
       </div>
       {% endfor %}
     </div>
