@@ -286,11 +286,10 @@ PANELS = [
         "image": None,
         "kicker": "Strategic Roadmap · 2026 – 2028",
         "headline": "Years one and two.",
-        "tl_range": [0, 50],
+        "tl_range": [0, 27],
         "years": [
             {"label": "2026", "pos": "5%"},
-            {"label": "2027", "pos": "37%"},
-            {"label": "2028", "pos": "95%"},
+            {"label": "2027", "pos": "54%"},
         ],
         "phase0": {
             "label": "Phase Zero",
@@ -319,10 +318,10 @@ PANELS = [
         "image": None,
         "kicker": "Strategic Roadmap · 2028 – 2030",
         "headline": "Years three and four.",
-        "tl_range": [50, 100],
+        "tl_range": [27, 100],
         "years": [
-            {"label": "2028", "pos": "5%"},
-            {"label": "2029", "pos": "37%"},
+            {"label": "2028", "pos": "4%"},
+            {"label": "2029", "pos": "52%"},
             {"label": "2030", "pos": "95%"},
         ],
         "legend": [
