@@ -61,7 +61,7 @@
       tlFull.classList.remove('visible');
       setTimeout(() => { tlFull.style.display = 'none'; }, 600);
     }
-    if (tlZoomBtn) tlZoomBtn.textContent = 'See all four years →';
+    if (tlZoomBtn) tlZoomBtn.textContent = 'See 2026 – 2028 →';
   }
 
   if (tlZoomBtn) {
@@ -103,16 +103,14 @@
       el.style.left       = ((pStart - rangeStart) * scale) + '%';
       el.style.width      = ((pEnd - pStart) * scale) + '%';
       el.style.background = color;
-      el.innerHTML = `
-        <div class="tl-phase__label">${label}</div>
-        <div class="tl-phase__stat">${stat}</div>`;
+      el.innerHTML = `<div class="tl-phase__label">${label}</div>`;
       phC.appendChild(el);
     });
   }
 
   function buildTimeline() {
-    buildHalf(0,  50, 'tlEvents',  'tlPhases');   // 2026–2028
-    buildHalf(50, 100, 'tlEvents2', 'tlPhases2'); // 2028–2030
+    buildHalf(0,  50, 'tlEvents',  'tlPhases');
+    buildHalf(50, 100, 'tlEvents2', 'tlPhases2');
   }
 
   buildTimeline();

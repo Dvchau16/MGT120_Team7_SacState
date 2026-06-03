@@ -769,7 +769,6 @@ ul.article-body {
   justify-content: center;
 }
 
-.tl-header { margin-bottom: clamp(20px, 3.5vh, 40px); }
 
 .timeline-viewport {
   width: 100%;
@@ -790,15 +789,16 @@ ul.article-body {
 .tl-years {
   position: relative;
   height: 24px;
-  margin-bottom: 6px;
+  margin-bottom: 20px;
 }
 
 .tl-years span {
   position: absolute;
   transform: translateX(-50%);
   font-family: var(--mono);
-  font-size: clamp(8px, 0.72vw, 10px);
-  color: var(--cream-ghost);
+  font-size: clamp(24px, 2.16vw, 30px);
+  font-weight: 700;
+  color: var(--cream-muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   white-space: nowrap;
@@ -865,7 +865,7 @@ ul.article-body {
 
 .tl-phase__label {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 24px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -873,13 +873,6 @@ ul.article-body {
   white-space: nowrap;
 }
 
-.tl-phase__stat {
-  font-family: var(--mono);
-  font-size: 7px;
-  color: rgba(245,240,230,0.45);
-  white-space: nowrap;
-  margin-top: 2px;
-}
 
 .tl-legend {
   display: flex;
@@ -893,7 +886,7 @@ ul.article-body {
   align-items: center;
   gap: 7px;
   font-family: var(--mono);
-  font-size: clamp(12px, 0.9vw, 14px);
+  font-size: clamp(21px, 1.62vw, 26px);
   text-transform: uppercase;
   letter-spacing: 0.10em;
   color: var(--cream-muted);
@@ -1502,7 +1495,7 @@ ul.pz-context li + li {
 /* Phase 0 hero — visible by default */
 .tl-phase0-hero {
   margin-top: clamp(12px, 2vh, 20px);
-  max-width: 680px;
+  max-width: 900px;
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
@@ -1525,7 +1518,7 @@ ul.pz-context li + li {
 
 .tl-p0-stat {
   font-family: var(--mono);
-  font-size: clamp(13px, 1.1vw, 17px);
+  font-size: clamp(28px, 2.5vw, 40px);
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--cream);
@@ -1534,7 +1527,7 @@ ul.pz-context li + li {
 
 .tl-p0-period {
   font-family: var(--mono);
-  font-size: clamp(12px, 0.95vw, 14px);
+  font-size: clamp(24px, 1.9vw, 28px);
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--cream-muted);
@@ -1564,7 +1557,7 @@ ul.pz-context li + li {
   align-items: center;
   gap: 10px;
   font-family: var(--mono);
-  font-size: clamp(12px, 0.95vw, 14px);
+  font-size: clamp(22px, 1.71vw, 25px);
   color: var(--cream);
   letter-spacing: 0.06em;
 }
