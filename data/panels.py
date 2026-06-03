@@ -17,10 +17,10 @@ def pct(d):
     return round(((d - T_START).days / SPAN) * 100, 2)
 
 PHASES = [
-    {"label": "Phase 0", "stat": "No Cost.",  "start": 0,  "end": 5,  "color": "rgba(4,57,39,0.75)"},
-    {"label": "Phase 1", "stat": "3 agreements",       "start": 5,  "end": 12, "color": "rgba(4,57,39,0.55)"},
-    {"label": "Phase 2", "stat": "12 agreements",      "start": 12, "end": 25, "color": "rgba(10,92,58,0.55)"},
-    {"label": "Phase 3", "stat": "25 agreements",      "start": 25, "end": 50, "color": "rgba(10,92,58,0.40)"},
+    {"label": "Phase 0", "stat": "No Cost.",  "start": 0,  "end": 6,  "color": "rgba(4,57,39,0.75)"},
+    {"label": "Phase 1", "stat": "3 agreements",       "start": 6,  "end": 14, "color": "rgba(4,57,39,0.55)"},
+    {"label": "Phase 2", "stat": "12 agreements",      "start": 14, "end": 27, "color": "rgba(10,92,58,0.55)"},
+    {"label": "Phase 3", "stat": "25 agreements",      "start": 27, "end": 50, "color": "rgba(10,92,58,0.40)"},
     {"label": "Phase 4", "stat": "50 agreements",      "start": 50, "end": 75, "color": "rgba(196,163,90,0.25)"},
 ]
 
@@ -35,7 +35,7 @@ TIMELINE_EVENTS = [
       for y in [2026, 2027, 2028, 2029]],
     *[{"color": "#E87A5A", "date": date(y, 2, 6), "label": "Feb 6 Deadline"}
       for y in [2027, 2028, 2029, 2030]],
-    *[{"color": "#C875E8", "date": date(y, m, 1), "label": "EF Roundtable"}
+    *[{"color": "#C875E8", "date": date(y, m, 1), "label": "E F Roundtable"}
       for y, m in [(2027,4),(2027,11),(2028,4),(2028,11),(2029,4),(2029,11)]],
 ]
 
@@ -285,14 +285,16 @@ PANELS = [
 
         "image": None,
         "kicker": "Strategic Roadmap · 2026 – 2028",
-        "headline": "Phase 0 · Phase 1 · Phase 2 · Phase 3",
+        "headline": "Years one and two.",
         "tl_range": [0, 50],
         "years": [
-            {"label": "2026", "pos": "1%"},
-            {"label": "2028", "pos": "99%"},
+            {"label": "2026", "pos": "5%"},
+            {"label": "2027", "pos": "37%"},
+            {"label": "2028", "pos": "95%"},
         ],
         "phase0": {
             "label": "Phase Zero",
+            "headline": "Four Years. Five Phases.",
             "stat": "June – September 2026",
             "events": [
                 {"color": "#C4A35A", "text": "3 employer agreements signed → Fall 2026"},
@@ -306,7 +308,7 @@ PANELS = [
             {"color": "#5AAAE8", "label": "Advisory Council"},
             {"color": "#5AD88A", "label": "Career Fair Survey"},
             {"color": "#E87A5A", "label": "Feb 6 Deadline"},
-            {"color": "#C875E8", "label": "EF Roundtable"},
+            {"color": "#C875E8", "label": "Employee Faculty Roundtable"},
         ],
     },
     {
@@ -319,16 +321,16 @@ PANELS = [
         "headline": "Years three and four.",
         "tl_range": [50, 100],
         "years": [
-            {"label": "2028", "pos": "0%"},
-            {"label": "2029", "pos": "50%"},
-            {"label": "2030", "pos": "100%"},
+            {"label": "2028", "pos": "5%"},
+            {"label": "2029", "pos": "37%"},
+            {"label": "2030", "pos": "95%"},
         ],
         "legend": [
             {"color": "#C4A35A", "label": "Employer Agreements"},
             {"color": "#5AAAE8", "label": "Advisory Council"},
             {"color": "#5AD88A", "label": "Career Fair Survey"},
             {"color": "#E87A5A", "label": "Feb 6 Deadline"},
-            {"color": "#C875E8", "label": "EF Roundtable"},
+            {"color": "#C875E8", "label": "Employee Faculty Roundtable"},
         ],
     },
     {

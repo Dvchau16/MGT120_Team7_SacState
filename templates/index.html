@@ -297,75 +297,56 @@
 {% elif panel.type == 'timeline' %}
 <div class="tl-wrap">
   <div class="tl-header">
-    <div class="kicker">Strategic Roadmap · 2026 – 2030</div>
-    <h2 class="headline headline--sm">Four years. Five phases.</h2>
+    <div class="kicker">{{ panel.kicker }}</div>
   </div>
 
+  {% if panel.phase0 is defined %}
   <div class="tl-phase0-hero" id="tlPhase0">
-    <div class="tl-p0-label">Phase Zero</div>
-    <div class="tl-p0-stat">No Cost · Five Decisions</div>
-    <div class="tl-p0-period">June – September 2026</div>
-    <div class="tl-p0-desc">Five decisions the Provost can make this summer. No budget line. No employer at the table. No approval chain beyond the office.</div>
+    {% if panel.phase0.headline is defined %}
+    <h2 class="headline headline--sm tl-p0-headline">{{ panel.phase0.headline }}</h2>
+    {% endif %}
+    <div class="tl-p0-label">{{ panel.phase0.label }}</div>
+    <div class="tl-p0-stat">{{ panel.phase0.stat }}</div>
+    <div class="tl-p0-period">{{ panel.phase0.period }}</div>
+    <div class="tl-p0-desc">{{ panel.phase0.desc }}</div>
     <div class="tl-p0-events">
-      <div class="tl-p0-ev"><span style="background:#C4A35A;" class="tl-p0-dot"></span>3 employer agreements signed &rarr; Fall 2026</div>
-      <div class="tl-p0-ev"><span style="background:#5AD88A;" class="tl-p0-dot"></span>Career Fair employer survey deployed &rarr; October 2026</div>
-      <div class="tl-p0-ev"><span style="background:#5AAAE8;" class="tl-p0-dot"></span>Mock interview required in two courses &rarr; Fall 2026</div>
+      {% for ev in panel.phase0.events %}
+      <div class="tl-p0-ev"><span style="background:{{ ev.color }};" class="tl-p0-dot"></span>{{ ev.text }}</div>
+      {% endfor %}
     </div>
   </div>
+  {% endif %}
 
-  <div class="tl-full-view" id="tlFull">
+  <div class="tl-full-view{% if panel.phase0 is not defined %} visible{% endif %}"
+       id="{% if panel.phase0 is defined %}tlFull{% else %}tlFull2{% endif %}"
+       {% if panel.phase0 is not defined %}style="display:block;"{% endif %}>
+    {% if panel.headline is defined %}
+    <h2 class="headline headline--sm">{{ panel.headline }}</h2>
+    {% endif %}
     <div class="timeline-viewport">
-      <div class="timeline-track" id="timelineTrack">
+      <div class="timeline-track">
         <div class="tl-years">
-          <span style="left:0%">2026</span>
-          <span style="left:50%">2027</span>
-          <span style="left:100%">2028</span>
+          {% for yr in panel.years %}
+          <span style="left:{{ yr.pos }}">{{ yr.label }}</span>
+          {% endfor %}
         </div>
         <div class="tl-rule"></div>
-        <div class="tl-events" id="tlEvents"></div>
-        <div class="tl-phases" id="tlPhases"></div>
+        <div class="tl-events" id="{% if panel.phase0 is defined %}tlEvents{% else %}tlEvents2{% endif %}"></div>
+        <div class="tl-phases" id="{% if panel.phase0 is defined %}tlPhases{% else %}tlPhases2{% endif %}"></div>
       </div>
     </div>
+    {% if panel.legend is defined %}
     <div class="tl-legend">
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#C4A35A;"></span>Employer Agreements</div>
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#5AAAE8;"></span>Advisory Council</div>
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#5AD88A;"></span>Career Fair Survey</div>
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#E87A5A;"></span>Feb 6 Deadline</div>
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#C875E8;"></span>EF Roundtable</div>
+      {% for item in panel.legend %}
+      <div class="tl-leg-item"><span class="tl-dot" style="background:{{ item.color }};"></span>{{ item.label }}</div>
+      {% endfor %}
     </div>
+    {% endif %}
   </div>
 
-  <button class="tl-zoom-btn" id="tlZoomBtn">See 2026 – 2028 →</button>
-</div>
-
-{# ── TIMELINE B (2028–2030) ──────────────────────────────────────────────────── #}
-{% elif panel.type == 'timeline_b' %}
-<div class="tl-wrap">
-  <div class="tl-header">
-    <div class="kicker">Strategic Roadmap · 2028 – 2030</div>
-    <h2 class="headline headline--sm">Years three and four.</h2>
-  </div>
-  <div class="tl-full-view visible" style="display:block;">
-    <div class="timeline-viewport">
-      <div class="timeline-track" id="timelineTrack2">
-        <div class="tl-years">
-          <span style="left:0%">2028</span>
-          <span style="left:50%">2029</span>
-          <span style="left:100%">2030</span>
-        </div>
-        <div class="tl-rule"></div>
-        <div class="tl-events" id="tlEvents2"></div>
-        <div class="tl-phases" id="tlPhases2"></div>
-      </div>
-    </div>
-    <div class="tl-legend">
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#C4A35A;"></span>Employer Agreements</div>
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#5AAAE8;"></span>Advisory Council</div>
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#5AD88A;"></span>Career Fair Survey</div>
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#E87A5A;"></span>Feb 6 Deadline</div>
-      <div class="tl-leg-item"><span class="tl-dot" style="background:#C875E8;"></span>EF Roundtable</div>
-    </div>
-  </div>
+  {% if panel.zoom_btn is defined %}
+  <button class="tl-zoom-btn" id="tlZoomBtn">{{ panel.zoom_btn }}</button>
+  {% endif %}
 </div>
 
 {# ── IMPACT GRID ────────────────────────────────────────────────────────────── #}
