@@ -259,7 +259,7 @@ PANELS = [
         "type": "image_only",
         "bg": "#010C05",
 
-        "image": "images/canvas2.jpg",
+        "image": "images/canvas2.png",
         "image_label": "Canvas",
     },
     {
