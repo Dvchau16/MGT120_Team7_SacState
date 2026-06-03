@@ -31,11 +31,11 @@ TIMELINE_EVENTS = [
     {"color": "#C4A35A", "date": date(2028, 9, 1),  "label": "50 agreements"},
     *[{"color": "#5AAAE8", "date": date(y, m, 1), "label": "Advisory Council"}
       for y, m in [(2027,3),(2027,10),(2028,3),(2028,10),(2029,3),(2029,10)]],
-    *[{"color": "#5AD88A", "date": date(y, 10, 1), "label": "Career Fair Survey"}
+    *[{"color": "#5AD88A", "date": date(y, 10, 10), "label": "Career Fair Survey"}
       for y in [2026, 2027, 2028, 2029]],
     *[{"color": "#E87A5A", "date": date(y, 2, 6), "label": "Feb 6 Deadline"}
       for y in [2027, 2028, 2029, 2030]],
-    *[{"color": "#C875E8", "date": date(y, m, 1), "label": "E F Roundtable"}
+    *[{"color": "#C875E8", "date": date(y, m, 1), "label": "EF Roundtable"}
       for y, m in [(2027,4),(2027,11),(2028,4),(2028,11),(2029,4),(2029,11)]],
 ]
 

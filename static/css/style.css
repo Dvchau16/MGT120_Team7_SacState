@@ -828,21 +828,20 @@ ul.article-body {
 }
 
 .tl-event__dot {
-  width: 7px; height: 7px;
+  width: 14px; height: 14px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .tl-event__label {
   font-family: var(--mono);
-  font-size: 7px;
-  color: var(--cream-muted);
+  font-size: 13px;
+  color: rgba(245,240,230,0.80);
   white-space: nowrap;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-  height: 44px;
   overflow: hidden;
 }
 
@@ -1597,7 +1596,7 @@ ul.pz-context li + li {
 
 .tl-events {
   position: relative;
-  height: 80px;  /* taller to accommodate two rows */
+  height: 190px;
   margin-bottom: 8px;
 }
 
