@@ -61,7 +61,7 @@
       tlFull.classList.remove('visible');
       setTimeout(() => { tlFull.style.display = 'none'; }, 600);
     }
-    if (tlZoomBtn) tlZoomBtn.textContent = 'See 2026 – 2028 →';
+    if (tlZoomBtn) tlZoomBtn.textContent = 'See 2026 – 2027 →';
   }
 
   if (tlZoomBtn) {
