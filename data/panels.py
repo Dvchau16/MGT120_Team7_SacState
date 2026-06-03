@@ -289,7 +289,8 @@ PANELS = [
         "tl_range": [0, 27],
         "years": [
             {"label": "2026", "pos": "5%"},
-            {"label": "2027", "pos": "54%"},
+            {"label": "2027", "pos": "31%"},
+            {"label": "2028", "pos": "82%"},
         ],
         "phase0": {
             "label": "Phase Zero",
@@ -321,8 +322,8 @@ PANELS = [
         "tl_range": [27, 100],
         "years": [
             {"label": "2028", "pos": "4%"},
-            {"label": "2029", "pos": "52%"},
-            {"label": "2030", "pos": "95%"},
+            {"label": "2029", "pos": "36%"},
+            {"label": "2030", "pos": "82%"},
         ],
         "legend": [
             {"color": "#C4A35A", "label": "Employer Agreements"},
